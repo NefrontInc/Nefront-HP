@@ -28,6 +28,7 @@ jobs:
               uses: octokit/request-action@v2.x
               with:
                   route: POST /orgs/{owner}/repos
+                  owner: ${{ steps.preview_repo.outputs.owner }}
                   accept: 'application/vnd.github+json'
                   name: ${{ steps.preview_repo.outputs.name }}
               env:
