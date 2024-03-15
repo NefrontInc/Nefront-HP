@@ -1,0 +1,104 @@
+<svg width="564" height="326" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:space="preserve" overflow="hidden">
+    <defs>
+        <clipPath id="clip0">
+            <rect x="1425" y="352" width="564" height="326" />
+        </clipPath>
+    </defs>
+    <g clip-path="url(#clip0)" transform="translate(-1425 -352)">
+        <path d="M1426 674 1572.42 455 1986 455 1839.58 674Z" fill="#4472C4" fill-rule="evenodd"
+            fill-opacity="0.27451" />
+        <path
+            d="M1849.33 373.062C1838.41 356.904 1816.42 352.638 1800.22 363.534 1796.45 366.068 1793.21 369.304 1790.67 373.062 1784.06 382.775 1782.67 395.103 1786.94 406.038L1803.04 441.552 1816.95 470.639C1817.81 472.32 1819.88 472.985 1821.56 472.123 1822.2 471.796 1822.72 471.277 1823.05 470.639L1836.96 441.552 1853.06 406.038C1857.33 395.103 1855.94 382.775 1849.33 373.062ZM1846.7 403.397 1830.74 438.597 1820.03 461C1820.02 461.034 1819.99 461.034 1819.97 461L1809.32 438.722 1793.3 403.397C1789.92 394.591 1791.07 384.694 1796.38 376.894 1805.18 363.884 1822.89 360.454 1835.94 369.233 1838.98 371.282 1841.6 373.899 1843.65 376.94 1848.94 384.733 1850.08 394.61 1846.7 403.397Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1713.59 618.5C1717.17 618.461 1720.82 618.403 1724.5 618.32L1724.33 611.5C1720.68 611.583 1717.06 611.639 1713.5 611.678Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1741.5 486.08 1738.27 479.5C1734.83 481.233 1731.55 483.304 1728.5 485.682L1732.91 491.5C1735.6 489.415 1738.47 487.601 1741.5 486.08Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1726.5 497.97 1721.01 494.5C1718.94 497.68 1717.74 501.334 1717.5 505.111L1724 505.5C1724.16 502.817 1725.02 500.221 1726.5 497.97Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1703.49 611.511 1700.11 611.514 1693.53 611.5 1693.5 618.486 1700.11 618.5 1703.5 618.497 1703.49 611.511Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1768.5 535.001C1765.06 534.177 1761.65 533.356 1758.34 532.5L1756.5 538.968C1759.86 539.833 1763.3 540.666 1766.79 541.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1672.5 611.5 1672.5 618.461C1675.55 618.461 1678.89 618.479 1682.46 618.5L1682.5 611.539C1678.91 611.516 1675.56 611.5 1672.5 611.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1727.08 526.5 1731.5 521.143C1729.13 519.38 1727.21 517.106 1725.89 514.5L1719.5 517.427C1721.28 520.974 1723.87 524.078 1727.08 526.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1768.5 470.246 1769.85 476.5C1772.94 475.882 1776.19 475.313 1779.5 474.81L1778.47 468.5C1775.05 469.02 1771.69 469.607 1768.5 470.246Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1789.5 466.463 1790.22 473.5C1795.73 472.802 1799.35 472.579 1799.5 472.572L1799.16 465.5C1798.76 465.524 1795.1 465.754 1789.5 466.463Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1830.5 581.944C1830.51 578.766 1830.17 575.598 1829.47 572.5L1822.5 574.159C1823.07 576.71 1823.35 579.319 1823.34 581.935 1823.34 582.524 1823.31 583.111 1823.25 583.695L1830.36 584.5C1830.45 583.651 1830.5 582.798 1830.5 581.944Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1794.5 603.659 1796.3 610.5C1799.76 609.554 1803.16 608.421 1806.5 607.106L1804 600.5C1800.89 601.724 1797.72 602.778 1794.5 603.659Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1813.5 596.499 1817.02 602.5C1820.25 600.495 1823.12 597.919 1825.5 594.886L1820.24 590.5C1818.34 592.892 1816.06 594.921 1813.5 596.499Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1798.12 543.5 1795.5 549.621C1798.77 550.734 1801.96 552.029 1805.06 553.5L1808.5 547.718C1805.14 546.12 1801.67 544.711 1798.12 543.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1816.93 553.5 1812.5 558.734C1814.9 560.669 1816.99 562.95 1818.69 565.5L1824.5 561.803C1822.42 558.675 1819.86 555.875 1816.93 553.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1775.5 608.104 1776.47 614.5C1779.98 614.002 1783.35 613.444 1786.5 612.843L1785.21 606.5C1782.17 607.081 1778.9 607.621 1775.5 608.104Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1736.5 531.66C1739.71 533.132 1743.01 534.414 1746.37 535.5L1748.5 529.047C1745.39 528.043 1742.34 526.859 1739.36 525.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1745.5 617.962 1745.09 610.5C1741.57 610.713 1738.03 610.889 1734.5 611.033L1734.78 618.5C1738.35 618.356 1741.93 618.179 1745.5 617.962Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1748.5 475.786 1750.65 482.5C1753.38 481.394 1756.35 480.346 1759.5 479.385L1757.84 472.5C1754.53 473.511 1751.39 474.617 1748.5 475.786Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1755.05 617.5C1758.58 617.212 1762.07 616.88 1765.5 616.5L1764.75 609.5C1761.38 609.874 1757.96 610.199 1754.5 610.482Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1778.27 537.5 1776.5 543.867C1779.86 544.698 1783.21 545.564 1786.48 546.5L1788.5 540.2C1785.15 539.241 1781.72 538.352 1778.27 537.5Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1820 377.5C1811.44 377.501 1804.5 384.44 1804.5 393 1804.5 401.561 1811.44 408.5 1820 408.5 1828.56 408.5 1835.5 401.56 1835.5 393 1835.54 384.476 1828.65 377.536 1820.13 377.5 1820.09 377.5 1820.04 377.5 1820 377.5ZM1820 401.505C1815.3 401.505 1811.49 397.697 1811.49 393 1811.49 388.302 1815.3 384.494 1820 384.495 1824.7 384.495 1828.51 388.303 1828.51 393 1828.56 397.648 1824.83 401.455 1820.18 401.505 1820.12 401.506 1820.06 401.506 1820 401.505Z"
+            stroke="#3054D6" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+        <path
+            d="M1675.2 545C1674.83 545 1674.29 545 1673.93 545.181L1558.72 583.585C1557.09 584.128 1556 585.577 1556 587.208 1556 588.838 1557.09 590.287 1558.72 590.831L1613.42 610.576 1633.17 665.283C1633.71 666.913 1635.16 668 1636.79 668 1638.42 668 1639.87 666.913 1640.42 665.283L1678.82 549.891C1679.18 548.623 1679 547.355 1678.28 546.449 1677.73 545.724 1676.65 545 1675.2 545ZM1664.33 559.854 1636.61 643.002 1623.75 607.134 1621.94 602.243 1617.05 600.431 1581.18 587.57 1664.33 559.854"
+            stroke="#3054D6" stroke-width="1.79039" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"
+            stroke-opacity="1" fill="#3054D6" fill-rule="evenodd" fill-opacity="1" />
+    </g>
+</svg>
