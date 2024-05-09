@@ -14,13 +14,6 @@ import Subsection from '@/subsection';
 
 const imamuu = '/images/imamura.jpg';
 const hemmi = '/images/hemmi.jpg';
-const lapla = '/images/akiyama.jpg';
-const asuto = '/images/watanabe.jpg';
-
-const dir = '/Nefront-HP';
-
-ReactGA.initialize('G-FBQ0WYNGEZ');
-ReactGA.send('pageview');
 
 const Particles = dynamic(() => import('../../components/particles'), {
     loading: () => <div id="hoge" />,
@@ -288,16 +281,17 @@ const Home = () => {
                             thumbnail={imamuu}
                         >
                             <br />
-                            After graduating from the University of Tsukuba with a bachelor&apos;s
-                            degree in Information Science, he entered the graduate school of the
-                            University of Tokyo.
+                            After graduating from University of Tsukuba with a bachelor’s degree in
+                            Information Science, he entered the Graduate School of the University of
+                            Tokyo, the Rekimoto Lab.
                             <br />
-                            In addition to developing and commercializing IndooAR, he is also
-                            researching eye gaze interfaces for AR/VR head-mounted displays.
+                            In addition to the development of the indoor AR cloud, he is also
+                            involved in research on applications of AI technology and the gaze
+                            interface for AR/VR head-mounted displays.
                             <br />
-                            As a long-term intern at the Jigen Group, he was responsible for
-                            launching new businesses as a PM. After developing and managing an event
-                            recruitment-based SNS, he went on to launch Nefront.
+                            As a long-term intern at Zigexn Group, he was in charge of launching new
+                            businesses as a PM. Also, after developing and managing an event-based
+                            SNS, he launched Nefront.
                             <br />
                         </GridItem>
                         <GridItem
@@ -306,15 +300,15 @@ const Home = () => {
                             thumbnail={hemmi}
                         >
                             <br />
-                            Graduated from Tokyo National College of Technology with a
-                            associate&apos;s degree in Information Technology, he entered the
-                            department of Computer Science and Engineering of the college.
+                            Graduated from National Institute of Technology, Tokyo College,
+                            Department of Computer Science and Information Engineering, and entered
+                            the graduate school of University of Tsukuba.
                             <br />
                             Since then, he&apos;s been studying AutoML (Automated Machine Learning)
-                            as a research assistant at the Artificial Intelligence Research Center
-                            of the National Institute of Advanced Industrial Science and Technology
-                            (AIST), while studying management engineering at the University of
-                            Tsukuba Graduate School.
+                            at the Social Intelligence Research Team, Artificial Intelligence
+                            Research Center, National Institute of Advanced Industrial Science and
+                            Technology (AIST), while studying management engineering at the
+                            University of Tsukuba Graduate School.
                             <br />
                             A genuine idea man who just loves to touch new technology.
                             <br />
@@ -326,48 +320,6 @@ const Home = () => {
                             >
                                 itigo11111.com
                             </a>
-                            <br />
-                        </GridItem>
-                        <GridItem
-                            title="Kei Akiyama"
-                            nefposition="Executive Officer, CTO"
-                            thumbnail={lapla}
-                        >
-                            <br />
-                            While a student at private Kaijo High School, he encountered competitive
-                            programming and started his programming career.
-                            <br />
-                            After that, he entered the College of Information Science at the
-                            University of Tsukuba, and was involved in AI-related projects and
-                            back-end implementation of AutoML tools as a contract software engineer
-                            at AVILEN Corporation, as well as research and development of a model
-                            that generates sound effects in response to typed text by individuals.
-                            Currently, he is also working as an SRE at Cookpad Inc.
-                            <br />
-                            He programs from operating systems to web front.
-                            <br />
-                            Website：{' '}
-                            <a href="https://lapla.dev/" target="_blank" rel="noopener noreferrer">
-                                lapla.dev
-                            </a>
-                            <br />
-                        </GridItem>
-                        <GridItem
-                            title="Sota Watanabe"
-                            nefposition="Executive Officer, VP of Engineering"
-                            thumbnail={asuto}
-                        >
-                            <br />
-                            While a student at Fuji High School in Shizuoka Prefecture, he began
-                            doing electronic work as a hobby.
-                            <br />
-                            He then went on to study at College of Information Science at the
-                            University of Tsukuba, where he was in charge of front-end development
-                            for a smartphone application and software development for a robotics
-                            contest.
-                            <br />
-                            He was also a development intern student as a backend engineer using
-                            Rails in Techhouse Inc.
                             <br />
                         </GridItem>
                     </SimpleGrid>

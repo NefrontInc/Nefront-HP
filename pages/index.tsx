@@ -16,10 +16,6 @@ import Subsection from '@/subsection';
 
 const imamuu = '/images/imamura.jpg';
 const hemmi = '/images/hemmi.jpg';
-const lapla = '/images/akiyama.jpg';
-const asuto = '/images/watanabe.jpg';
-
-const dir = '/Nefront-HP';
 
 ReactGA.initialize('G-FBQ0WYNGEZ');
 ReactGA.send('pageview');
@@ -231,18 +227,21 @@ const Home = ({ newPosts }: Props) => {
                     <SimpleGrid columns={1} gap={6}>
                         <GridItem title="今村翔太" nefposition="代表取締役 CEO" thumbnail={imamuu}>
                             <br />
-                            筑波大学情報科学類卒業後、東京大学大学院へ進学。
+                            筑波大学情報科学類卒業後、東京大学大学院 暦本研究室へ進学。
                             <br />
-                            屋内ARクラウドの開発・事業化の他、AR/VRヘッドマウントディスプレイ向け視線インタフェースの研究も行っている。
+                            屋内ARクラウドの開発・事業化の他、AIの活用やAR/VRヘッドマウントディスプレイ向け視線インタフェースの研究も行っている。
                             <br />
                             じげんグループの長期インターンにて、PMとして新規事業の立ち上げ等を担った後、イベント募集を起点としたSNSの開発・運営を経て、Nefrontの立ち上げへ。
                             <br />
                         </GridItem>
                         <GridItem title="逸見一喜" nefposition="執行役員 COO" thumbnail={hemmi}>
                             <br />
-                            国立東京高専情報工学科卒業後、同専攻科に進学。
+                            国立東京高専情報工学科＆同専攻科卒業後、筑波大学大学院に進学。
                             <br />
-                            その後は筑波大学大学院で経営工学を専攻しつつ、産業技術総合研究所人工知能研究センターのリサーチアシスタントとしてAutoML（機械学習の自動化）を研究している。
+                            現在は筑波大学大学院
+                            博士後期課程で経営工学を専攻しつつ、産業技術総合研究所
+                            人工知能研究センター
+                            社会知能研究チームにてAutoML（機械学習の自動化）の研究を行っている。
                             <br />
                             新しい技術を触るのがとにかく大好きな生粋のアイデアマン。
                             <br />
@@ -255,38 +254,6 @@ const Home = ({ newPosts }: Props) => {
                             >
                                 itigo11111.com
                             </a>
-                            <br />
-                        </GridItem>
-                        <GridItem title="秋山馨" nefposition="執行役員 CTO" thumbnail={lapla}>
-                            <br />
-                            私立海城高等学校在学中に競技プログラミングに出会いプログラミングの道に入る。
-                            <br />
-                            その後、筑波大学情報科学類へ進学し、株式会社AVILENの業務委託ソフトウェアエンジニアとしてAI系の事業やAutoMLツールのバックエンド実装に関わったり、個人で文章を打ち込むとそれに合わせた効果音を生成するモデルの研究開発も行っていた。現在、株式会社クックパッドでSRE業務をしている。
-                            <br />
-                            OSからWebフロントエンドまで、何でも書く。
-                            <br />
-                            個人サイト：{' '}
-                            <a
-                                href="https://lapla.dev/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sim"
-                            >
-                                lapla.dev
-                            </a>
-                            <br />
-                        </GridItem>
-                        <GridItem
-                            title="渡邉蒼太"
-                            nefposition="執行役員 VP of Engineering"
-                            thumbnail={asuto}
-                        >
-                            <br />
-                            静岡県立富士高校在学中に電子工作を趣味で行いはじめる。
-                            <br />
-                            その後、筑波大学情報科学類へ進学し、スマートフォンアプリのフロントエンド開発やロボットコンテストでソフトウェア開発を担当。
-                            <br />
-                            株式会社Techouseの開発インターンでRailsでのバックエンド開発も務める。
                             <br />
                         </GridItem>
                     </SimpleGrid>
