@@ -293,14 +293,13 @@ const Home = () => {
                             businesses as a PM. Also, after developing and managing an event-based
                             SNS, he launched Nefront.
                             <br />
-                            
                             <a
                                 href="https://imamuus.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="sim"
                             >
-                                Imamura's Homepage
+                                Imamura Homepage
                             </a>
                         </GridItem>
                         <GridItem
@@ -328,7 +327,7 @@ const Home = () => {
                                 rel="noopener noreferrer"
                                 className="sim"
                             >
-                                Hemmi's Homepage
+                                Hemmi Homepage
                             </a>
                             <br />
                         </GridItem>
