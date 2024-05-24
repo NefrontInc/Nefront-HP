@@ -293,6 +293,15 @@ const Home = () => {
                             businesses as a PM. Also, after developing and managing an event-based
                             SNS, he launched Nefront.
                             <br />
+                            
+                            <a
+                                href="https://imamuus.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="sim"
+                            >
+                                Imamura's Homepage
+                            </a>
                         </GridItem>
                         <GridItem
                             title="Kazuki Hemmi"
@@ -312,13 +321,14 @@ const Home = () => {
                             <br />
                             A genuine idea man who just loves to touch new technology.
                             <br />
-                            Website：{' '}
+                            
                             <a
                                 href="https://itigo11111.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className="sim"
                             >
-                                itigo11111.com
+                                Hemmi's Homepage
                             </a>
                             <br />
                         </GridItem>
