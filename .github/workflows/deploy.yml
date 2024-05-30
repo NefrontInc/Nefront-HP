@@ -28,7 +28,7 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
             - name: Install dependencies
-              run: yarn --immutable --immutable-cache
+              run: yarn
             - run: yarn run format:check
             - run: yarn build
             - name: Add nojekyll and CNAME
