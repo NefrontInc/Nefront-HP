@@ -233,7 +233,6 @@ const Home = ({ newPosts }: Props) => {
                             <br />
                             じげんグループの長期インターンにて、PMとして新規事業の立ち上げ等を担った後、イベント募集を起点としたSNSの開発・運営を経て、Nefrontの立ち上げへ。
                             <br />
-                            
                             <a
                                 href="https://imamuus.com/"
                                 target="_blank"
@@ -255,7 +254,6 @@ const Home = ({ newPosts }: Props) => {
                             <br />
                             新しい技術を触るのがとにかく大好きな生粋のアイデアマン。
                             <br />
-                            
                             <a
                                 href="https://itigo11111.com/"
                                 target="_blank"

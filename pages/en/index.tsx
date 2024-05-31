@@ -320,7 +320,6 @@ const Home = () => {
                             <br />
                             A genuine idea man who just loves to touch new technology.
                             <br />
-                            
                             <a
                                 href="https://itigo11111.com/"
                                 target="_blank"
