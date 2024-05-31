@@ -299,7 +299,7 @@ const Home = () => {
                                 rel="noopener noreferrer"
                                 className="sim"
                             >
-                                Imamura Homepage
+                                Imamura&#39;s Homepage
                             </a>
                         </GridItem>
                         <GridItem
@@ -326,7 +326,7 @@ const Home = () => {
                                 rel="noopener noreferrer"
                                 className="sim"
                             >
-                                Hemmi Homepage
+                                Hemmi&#39;s Homepage
                             </a>
                             <br />
                         </GridItem>
