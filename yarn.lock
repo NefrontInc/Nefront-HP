@@ -3499,7 +3499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/css-modules@npm:^1.0.3":
+"@types/css-modules@npm:^1.0.5":
   version: 1.0.5
   resolution: "@types/css-modules@npm:1.0.5"
   checksum: 10/c03c110f5af29e2d37594467ceb79e944d61fd22fa84dd057e0f83803bf11e94f6f3d7153695b2baf9a79a99dc6521bda54920d8c06690ed26cf7e1001f88a5c
@@ -8664,7 +8664,7 @@ __metadata:
     "@emotion/react": "npm:^11.11.4"
     "@emotion/styled": "npm:^11.11.5"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.2.0"
-    "@types/css-modules": "npm:^1.0.3"
+    "@types/css-modules": "npm:^1.0.5"
     "@types/jsdom": "npm:^21.1.6"
     "@types/node": "npm:^20.6.0"
     "@types/react": "npm:^18.0.28"
