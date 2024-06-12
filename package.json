@@ -32,7 +32,7 @@
         "gray-matter": "^4.0.3",
         "jsdom": "^24.0.0",
         "marked": "^12.0.0",
-        "next": "^14.0.0",
+        "next": "^14.2.4",
         "react": "^18.2.0",
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-dom": "^18.2.0",
