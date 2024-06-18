@@ -3565,12 +3565,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.6.0":
+"@types/node@npm:*":
   version: 20.12.11
   resolution: "@types/node@npm:20.12.11"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10/c6afe7c2c4504a4f488814d7b306ebad16bf42cbb43bf9db9fe1aed8c5fb99235593c3be5088979a64526b106cf022256688e2f002811be8273d87dc2e0d484f
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.14.5":
+  version: 20.14.5
+  resolution: "@types/node@npm:20.14.5"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/74c7974a8c75280f9397f22ce34d10d5575668e3c357a165f385c9365c39b3ccda3aa2e7237e7e907fc72e515afb93cc0be1f3e2074cc1889c1ffeb01d2843cc
   languageName: node
   linkType: hard
 
@@ -8666,7 +8675,7 @@ __metadata:
     "@trivago/prettier-plugin-sort-imports": "npm:^4.2.0"
     "@types/css-modules": "npm:^1.0.5"
     "@types/jsdom": "npm:^21.1.7"
-    "@types/node": "npm:^20.6.0"
+    "@types/node": "npm:^20.14.5"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-scroll": "npm:^1.8.7"
