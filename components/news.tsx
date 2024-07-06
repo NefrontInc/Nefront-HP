@@ -12,7 +12,7 @@ const NewsDiv = styled.ul`
 
 const News = (newPosts: Post) => (
     <NewsDiv>
-        <PostsList isHome post={newPosts}></PostsList>
+        <PostsList isHome post={newPosts} />
     </NewsDiv>
 );
 

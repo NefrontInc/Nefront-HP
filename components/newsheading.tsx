@@ -15,7 +15,7 @@ const NewsHeading = ({ title, date, link }: Props) => (
                 </p>
             </div>
             <p>{title}</p>
-            <span className="arrow"></span>
+            <span className="arrow" />
         </a>
     </li>
 );

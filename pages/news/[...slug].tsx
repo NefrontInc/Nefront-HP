@@ -8,17 +8,13 @@ import Meta from '@/meta';
 import PostBody from '@/pbody';
 import PostHeader from '@/pheader';
 
-type Props = {
-    post: PostType;
-};
-
-const Post = ({ post }: Props) => {
+const Post = (post: PostType) => {
     return (
         <Layout>
             <Meta />
-            <div className="h-16"></div>
-            <PostHeader post={post}></PostHeader>
-            <PostBody content={post.content}></PostBody>
+            <div className="h-16" />
+            <PostHeader post={post} />
+            <PostBody content={post.content} />
         </Layout>
     );
 };

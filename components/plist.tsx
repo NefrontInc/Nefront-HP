@@ -3,12 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Post } from 'types/posts';
 
-type Props = {
-    isHome: boolean;
-    post: Post;
-};
-
-const PostsList = ({ isHome, post }: Props) => {
+const PostsList = ({ isHome, post }: { isHome: boolean; post: Post }) => {
     const [loadLength, setLoadLength] = useState(firstShowPostsNums);
     const [isEnd, setIsEnd] = useState(false);
     const [showPosts, setShowPosts] = useState(post.postArray);
@@ -44,7 +39,7 @@ const PostsList = ({ isHome, post }: Props) => {
                                     </p>
                                 </div>
                                 <p>{title}</p>
-                                <span className="arrow"></span>
+                                <span className="arrow" />
                             </Link>
                         </li>
                     </div>
@@ -69,7 +64,7 @@ const PostsList = ({ isHome, post }: Props) => {
                                             height="50"
                                         ></rect>
                                     </svg>
-                                    <span> More</span>
+                                    <span>More</span>
                                 </Link>
                             </div>
                         )}
@@ -77,9 +72,26 @@ const PostsList = ({ isHome, post }: Props) => {
                 ) : (
                     <>
                         {!isEnd && (
-                            <button onClick={displayMore} className="more">
-                                More
-                            </button>
+                            <div style={{ textAlign: 'center' }}>
+                                <button onClick={displayMore} className="more">
+                                    <svg width="300" height="62">
+                                        <linearGradient id="grad3">
+                                            <stop offset="0%" stopColor="#3054d6" />
+                                            <stop offset="100%" stopColor="#3054d6" />
+                                        </linearGradient>
+                                        <rect
+                                            x="5"
+                                            y="5"
+                                            rx="25"
+                                            fill="none"
+                                            stroke="url(#grad3)"
+                                            width="266"
+                                            height="50"
+                                        ></rect>
+                                    </svg>
+                                    <span>More</span>
+                                </button>
+                            </div>
                         )}
                     </>
                 )}
