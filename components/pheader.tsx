@@ -30,7 +30,7 @@ const PostHeader = ({ post }: Props) => {
                     alt="Thumbnail of this article"
                 />
             )}
-            <PostTitle title={post.title} date={post.date}></PostTitle>
+            <PostTitle title={post.title} date={post.date} />
             <div className="shr">
                 <TwitterShareButton
                     title={post.title}
@@ -38,14 +38,14 @@ const PostHeader = ({ post }: Props) => {
                     via="NefrontInc"
                     className="m2"
                 >
-                    <TwitterIcon size={40} round></TwitterIcon>
+                    <TwitterIcon size={40} round />
                 </TwitterShareButton>
                 <LineShareButton
                     title={post.title}
                     url={urlOrigin + '/news/' + post.slug}
                     className="m2"
                 >
-                    <LineIcon size={40} round></LineIcon>
+                    <LineIcon size={40} round />
                 </LineShareButton>
             </div>
         </section>

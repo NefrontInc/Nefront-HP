@@ -21,7 +21,7 @@ const Blog = ({ allPosts }: Props) => {
         <Layout>
             <div className="np">All news</div>
             <NewsDiv>
-                <PostsList isHome={false} post={allPosts}></PostsList>
+                <PostsList isHome={false} post={allPosts} />
             </NewsDiv>
         </Layout>
     );

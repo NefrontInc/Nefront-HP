@@ -6,7 +6,6 @@
 /* How to use? : Check the GitHub README
 /* v2.0.0
 /* ----------------------------------------------- */
-
 import React, { useEffect } from 'react';
 import TypeNefront from '@/typeNefront';
 
