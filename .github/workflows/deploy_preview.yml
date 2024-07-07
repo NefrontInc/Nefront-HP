@@ -33,7 +33,7 @@ jobs:
                   accept: 'application/vnd.github+json'
                   name: ${{ steps.preview_repo.outputs.name }}
               env:
-                  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
 
             - name: Post preview URL comment to PR
               if: github.event.action == 'opened'
@@ -73,14 +73,14 @@ jobs:
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               with:
-                  personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+                  personal_token: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
                   external_repository: ${{ steps.preview_repo.outputs.full_name }}
                   publish_dir: ./out
 
             - name: Check if pages is enabled
               id: pages_enabled
               run: |
-                  TOKEN=${{secrets.PERSONAL_ACCESS_TOKEN}}
+                  TOKEN=${{secrets.PAT_NefrontHP_OrgNefrontHP}}
                   REPO=${{steps.preview_repo.outputs.full_name}}
                   echo GH_PAGES=$( \
                   curl -L -H "Accept: application/vnd.github+json" \
