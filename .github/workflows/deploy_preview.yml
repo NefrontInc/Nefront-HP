@@ -99,4 +99,4 @@ jobs:
                   repo_name: ${{ steps.preview_repo.outputs.full_name }}
                   data: '{"source":{"branch":"gh-pages"}}'
               env:
-                  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
