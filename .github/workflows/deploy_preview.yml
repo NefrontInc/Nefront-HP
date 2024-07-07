@@ -26,6 +26,7 @@ jobs:
             - name: Create preview repo
               if: steps.new_repo.outputs.result == 'true'
               uses: octokit/request-action@v2.x
+              continue-on-error: true
               with:
                   route: POST /orgs/{owner}/repos
                   owner: ${{ steps.preview_repo.outputs.owner }}
