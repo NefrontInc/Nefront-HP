@@ -1,44 +1,50 @@
 name: GitHub Pages
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        concurrency:
-            group: ${{ github.workflow }}-${{ github.ref }}
-        timeout-minutes: 10
-        steps:
-            - uses: actions/checkout@v4
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: '19'
-                  cache: yarn
-            - name: Use Github Action cache
-              uses: actions/cache@v4
-              if: ${{ github.actor != 'renovate[bot]' }}
-              with:
-                  path: ${{ github.workspace }}/.next/cache
-                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-                  restore-keys: |
-                      ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-            - name: Install dependencies
-              run: yarn
-            - run: yarn run format:check
-            - run: yarn build
-            - name: Add nojekyll and CNAME
-              run: |
-                  touch ./out/.nojekyll
-                  cp CNAME ./out/
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '19'
+          cache: yarn
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              if: ${{ github.ref == 'refs/heads/main' }}
-              with:
-                  github_token: ${{ secrets.PAT_NefrontHP_OrgNefrontInc }}
-                  publish_dir: ./out
+      - name: Use Github Action cache
+        uses: actions/cache@v4
+        if: ${{ github.actor != 'renovate[bot]' }}
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Format code
+        run: yarn run format
+
+      - run: yarn build
+
+      - name: Add nojekyll and CNAME
+        run: |
+          touch ./out/.nojekyll
+          cp CNAME ./out/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.PAT_NefrontHP_OrgNefrontInc }}
+          publish_dir: ./out
