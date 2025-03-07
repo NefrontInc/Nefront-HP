@@ -1,102 +1,107 @@
 name: Deploy PR to preview repository
 
 on:
-    pull_request:
-        types: [opened, synchronize, reopened]
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
-    deploy-preview:
-        permissions: write-all
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout files
-              uses: actions/checkout@v4
+  deploy-preview:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v4
 
-            - name: Get preview repository name
-              uses: ./.github/actions/get_preview_repo
-              id: preview_repo
+      - name: Get preview repository name
+        uses: ./.github/actions/get_preview_repo
+        id: preview_repo
 
-            - name: Check if new repository is needed
-              id: new_repo
-              run: echo "result=$new_repo" >> $GITHUB_OUTPUT
-              env:
-                  new_repo: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
+      - name: Check if new repository is needed
+        id: new_repo
+        run: |
+          if [[ "${{ github.event.action }}" == "opened" || "${{ github.event.action }}" == "reopened" ]]; then
+            echo "result=true" >> $GITHUB_OUTPUT
+          else
+            echo "result=false" >> $GITHUB_OUTPUT
+          fi
 
-            - name: Create preview repo
-              if: steps.new_repo.outputs.result == 'true'
-              uses: octokit/request-action@v2.x
-              continue-on-error: true
-              with:
-                  route: POST /orgs/{owner}/repos
-                  owner: ${{ steps.preview_repo.outputs.owner }}
-                  accept: 'application/vnd.github+json'
-                  name: ${{ steps.preview_repo.outputs.name }}
-              env:
-                  GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
+      - name: Create preview repo
+        if: steps.new_repo.outputs.result == 'true'
+        uses: octokit/request-action@v2.x
+        continue-on-error: true
+        with:
+          route: POST /orgs/{owner}/repos
+          owner: ${{ steps.preview_repo.outputs.owner }}
+          accept: 'application/vnd.github+json'
+          name: ${{ steps.preview_repo.outputs.name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
 
-            - name: Post preview URL comment to PR
-              if: github.event.action == 'opened'
-              uses: octokit/request-action@v2.x
-              with:
-                  route: POST /repos/{owner}/{repo}/issues/{pr_number}/comments
-                  owner: ${{ github.event.repository.owner.login }}
-                  repo: ${{ github.event.repository.name }}
-                  pr_number: ${{ github.event.pull_request.number }}
-                  body: >
-                      "😎 Preview URL: ${{ steps.preview_repo.outputs.gh_page_url }}"
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Post preview URL comment to PR
+        if: github.event.action == 'opened'
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}/issues/${{ github.event.pull_request.number }}/comments
+          body: >
+            "😎 Preview URL: ${{ steps.preview_repo.outputs.gh_page_url }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: '19'
-                  cache: yarn
-            - name: Use Github Action cache
-              uses: actions/cache@v4
-              if: ${{ github.actor != 'renovate[bot]' }}
-              with:
-                  path: ${{ github.workspace }}/.next/cache
-                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-                  restore-keys: |
-                      ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-            - name: Install dependencies
-              run: yarn
-            - run: yarn run format:check
-            - run: yarn build
-              env:
-                  URL_PREFIX: ${{ steps.preview_repo.outputs.name }}
-            - name: Add nojekyll
-              run: touch ./out/.nojekyll
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '19'
+          cache: yarn
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                  personal_token: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
-                  external_repository: ${{ steps.preview_repo.outputs.full_name }}
-                  publish_dir: ./out
+      - name: Use Github Action cache
+        uses: actions/cache@v4
+        if: ${{ github.actor != 'renovate[bot]' }}
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-            - name: Check if pages is enabled
-              id: pages_enabled
-              run: |
-                  TOKEN=${{secrets.PAT_NefrontHP_OrgNefrontHP}}
-                  REPO=${{steps.preview_repo.outputs.full_name}}
-                  echo GH_PAGES=$( \
-                  curl -L -H "Accept: application/vnd.github+json" \
-                       -H "Authorization: token $TOKEN" \
-                       -H "X-GitHub-Api-Version: 2022-11-28" \
-                       https://api.github.com/repos/$REPO/pages | \
-                       jq '.message' \
-                  ) >> $GITHUB_OUTPUT
+      - name: Install dependencies
+        run: yarn
 
-            - name: Enable GitHub Pages
-              uses: octokit/request-action@v2.x
-              continue-on-error: true
-              if: steps.pages_enabled.outputs.GH_PAGES == '"Not Found"'
-              with:
-                  route: POST /repos/{repo_name}/pages
-                  repo_name: ${{ steps.preview_repo.outputs.full_name }}
-                  data: '{"source":{"branch":"gh-pages"}}'
-              env:
-                  GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
+      - name: Format code
+        run: yarn run format
+
+      - run: yarn build
+        env:
+          URL_PREFIX: ${{ steps.preview_repo.outputs.name }}
+
+      - name: Add nojekyll
+        run: touch ./out/.nojekyll
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
+          external_repository: ${{ steps.preview_repo.outputs.full_name }}
+          publish_dir: ./out
+
+      - name: Check if pages is enabled
+        id: pages_enabled
+        run: |
+          TOKEN=${{secrets.PAT_NefrontHP_OrgNefrontHP}}
+          REPO=${{steps.preview_repo.outputs.full_name}}
+          echo GH_PAGES=$( \
+          curl -L -H "Accept: application/vnd.github+json" \
+               -H "Authorization: token $TOKEN" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               https://api.github.com/repos/$REPO/pages | \
+               jq '.message' \
+          ) >> $GITHUB_OUTPUT
+
+      - name: Enable GitHub Pages
+        uses: octokit/request-action@v2.x
+        continue-on-error: true
+        if: steps.pages_enabled.outputs.GH_PAGES == '"Not Found"'
+        with:
+          route: POST /repos/${{ steps.preview_repo.outputs.owner }}/${{ steps.preview_repo.outputs.name }}/pages
+          data: '{"source":{"branch":"gh-pages"}}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}

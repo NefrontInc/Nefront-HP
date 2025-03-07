@@ -8,7 +8,11 @@ import Meta from '@/meta';
 import PostBody from '@/pbody';
 import PostHeader from '@/pheader';
 
-const Post = (post: PostType) => {
+type PostProps = {
+    post: PostType;
+};
+
+const Post = ({ post }: PostProps) => {
     return (
         <Layout>
             <Meta />
@@ -23,12 +27,14 @@ export default Post;
 
 type Params = {
     params: {
-        slug: string;
+        slug: string[];
     };
 };
 
 export async function getStaticProps({ params }: Params) {
-    const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content', 'thumbnail']);
+    // slug は配列のため、結合して文字列に変換
+    const slug = params.slug.join('/');
+    const post = getPostBySlug(slug, ['title', 'date', 'slug', 'content', 'thumbnail']);
     const content = marked(post.content || '');
 
     const dom = new JSDOM(content.toString());
@@ -57,6 +63,7 @@ export async function getStaticPaths() {
         paths: posts.postArray.map((post) => {
             return {
                 params: {
+                    // catch-all ルーティングの場合、slug を配列で返す
                     slug: post.slug.replace(/\.md$/, '').split('/'),
                 },
             };
