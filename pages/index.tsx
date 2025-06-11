@@ -1,6 +1,7 @@
 import { url } from 'lib/img';
 import { getNewPosts } from 'lib/posts';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import React from 'react';
 import ReactGA from 'react-ga4';
 import { Post } from 'types/posts';
@@ -12,7 +13,6 @@ import NewsHeading from '@/newsheading';
 import Paragraph from '@/paragraph';
 import PostsList from '@/plist';
 import Section from '@/section';
-import Subsection from '@/subsection';
 
 const imamuu = '/images/imamura.jpg';
 const hemmi = '/images/hemmi.jpg';
@@ -65,7 +65,7 @@ const Home = ({ newPosts }: Props) => {
                     </Heading>
                     <Paragraph>
                         <span className="exagsentence">
-                            現実空間に情報を重ね合わせる拡張現実（AR）のアプリケーションを、今までにない場所や使い方で提供できるソリューションを開発しています。
+                            AIやAR技術により、建物の情報をわかりやすく見える化します
                         </span>
                     </Paragraph>
                 </Section>
@@ -80,118 +80,21 @@ const Home = ({ newPosts }: Props) => {
 
                 <Section delay={0.2}>
                     <Heading as="h1" variant="section-title">
-                        Product
+                        Products
                     </Heading>
+
                     <Paragraph>
                         <span className="exagsentence" style={{ margin: '0 0 20px 0' }}>
-                            - 屋内ARクラウドサービス IndooAR -
+                            - 屋内空間情報管理システム IndooAR -
                         </span>
                         <span className="exagsentence">
-                            屋内空間に情報を紐づけて、誘導アプリケーションやARコンテンツを提供します。
+                            屋内空間に情報を紐づけて、誘導アプリケーションやARコンテンツを提供するシステムです。
                         </span>
                     </Paragraph>
                     <div className="flex">
                         <div className="flexdiv">
                             <Paragraph>
-                                <img
-                                    src={url('/images/vps.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="VPS"
-                                    className="svgs"
-                                />
-                                <Subsection>屋内での位置特定</Subsection>
-                                <br />
-                                スマートフォンのみでGPSの使えない屋内空間での位置特定を行うVPS（画像位置認識システム）を提供します。
-                            </Paragraph>
-                        </div>
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/reg.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="Register items"
-                                    className="svgs"
-                                />
-                                <Subsection>アイテム位置情報の登録や連携</Subsection>
-                                <br />
-                                屋内空間に商品やARコンテンツの位置を設定できます。API連携により、リアルタイムの更新も可能です。
-                            </Paragraph>
-                        </div>
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/navigate.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="Navigation"
-                                    className="svgs"
-                                />
-                                <Subsection>誘導やARコンテンツの表示</Subsection>
-                                <br />
-                                特定した位置やアイテムの登録位置に基づき誘導を行います。また、ARコンテンツの表示も行えます。
-                            </Paragraph>
-                        </div>
-                    </div>
-                </Section>
-
-                <div id="usecase" />
-                <div
-                    style={{
-                        width: '100%',
-                        height: '60px',
-                    }}
-                />
-
-                <Section delay={0.3}>
-                    <Heading as="h1" variant="section-title">
-                        Usecase
-                    </Heading>
-
-                    <div className="flex">
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img src={url('/images/super.jpg')} alt="小売店" className="imgs" />
-                                <Subsection>小売店</Subsection>
-                                <br />
-                                欲しい商品への誘導や売り場に合わせたARプロモーションを表示。キャラクターと買い物も！？
-                                <br />
-                            </Paragraph>
-                        </div>
-
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/underground.jpg')}
-                                    alt="都市施設"
-                                    className="imgs"
-                                />
-                                <Subsection>都市施設</Subsection>
-                                <br />
-                                施設内の誘導やおすすめ情報の提示が可能です。ショップやレストランのクーポン、ARコンテンツによる体験型展示も！
-                                <br />
-                            </Paragraph>
-                        </div>
-
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img src={url('/images/repos.jpg')} alt="倉庫" className="imgs" />
-                                <Subsection>倉庫</Subsection>
-                                <br />
-                                商品や部品の棚入れ、ピッキングを効率化できます。初心者でも作業にかかる時間やミスを削減へ！
-                                <br />
-                            </Paragraph>
-                        </div>
-
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/exhibi.jpg')}
-                                    alt="展示会"
-                                    className="imgs"
-                                />
-                                <Subsection>展示会</Subsection>
-                                <br />
-                                たくさんのブースがあって迷いがちな展示会会場。今いる場所を特定し、目的地までのスムーズな案内を実現します！
-                                <br />
+                                <Link href="/products" className="sim">詳細を見る</Link>
                             </Paragraph>
                         </div>
                     </div>
@@ -204,7 +107,7 @@ const Home = ({ newPosts }: Props) => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.4}>
+                <Section delay={0.3}>
                     <Heading as="h1" variant="section-title">
                         News
                     </Heading>
@@ -220,7 +123,7 @@ const Home = ({ newPosts }: Props) => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.5}>
+                <Section delay={0.4}>
                     <Heading as="h1" variant="section-title">
                         Members
                     </Heading>
@@ -274,7 +177,7 @@ const Home = ({ newPosts }: Props) => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.6}>
+                <Section delay={0.5}>
                     <Heading as="h1" variant="section-title">
                         Company
                     </Heading>
@@ -300,7 +203,7 @@ const Home = ({ newPosts }: Props) => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.7}>
+                <Section delay={0.6}>
                     <Heading as="h1" variant="section-title">
                         Contact
                     </Heading>
