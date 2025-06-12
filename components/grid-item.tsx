@@ -25,7 +25,7 @@ export const GridItem = ({ children, title, nefposition, thumbnail, personalSite
                         top="50%" 
                         left="50%" 
                         transform="translateY(calc(-50% + 0.2em))"
-                        marginLeft="calc(2.5em + 16px)"
+                        marginLeft={`calc(${title.length * 0.3}em + 1em + 20px)`}
                     >
                         <a 
                             href={personalSiteUrl} 
