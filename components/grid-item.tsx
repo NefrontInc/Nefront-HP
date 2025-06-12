@@ -44,7 +44,7 @@ export const GridItem = ({ children, title, nefposition, thumbnail, personalSite
             <Text fontSize={18} textAlign="center" color="gray">
                 {nefposition}
             </Text>
-            <Text fontSize={14}>{children}</Text>
+            <Box fontSize={14}>{children}</Box>
         </LinkBox>
     </Box>
 );
