@@ -1,24 +1,33 @@
 import { url } from 'lib/img';
+import { getNewPosts } from 'lib/posts';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactGA from 'react-ga4';
+import { Post } from 'types/posts';
 import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { GridItem } from '@/grid-item';
 import Layout from '@/layouts/article';
-import NewsHeading from '@/newsheading';
 import Paragraph from '@/paragraph';
+import PostsList from '@/plist';
 import Section from '@/section';
-import Subsection from '@/subsection';
 
-const imamuu = '/images/imamura.jpg';
-const hemmi = '/images/hemmi.jpg';
+const imamuu = '/images/index/imamura.jpg';
+const hemmi = '/images/index/hemmi.jpg';
+
+ReactGA.initialize('G-FBQ0WYNGEZ');
+ReactGA.send('pageview');
 
 const Particles = dynamic(() => import('../../components/particles'), {
     loading: () => <div id="hoge" />,
     ssr: false,
 });
+
+type Props = {
+    newPosts: Post;
+};
 
 const NewsDiv = styled.ul`
     list-style: none;
@@ -27,7 +36,37 @@ const NewsDiv = styled.ul`
     padding: 50px 0;
 `;
 
-const Home = () => {
+const Home = ({ newPosts }: Props) => {
+    const novareRef = useRef<HTMLImageElement>(null);
+    const adminContainerRef = useRef<HTMLDivElement>(null);
+    const filefrontRef = useRef<HTMLImageElement>(null);
+    const filefront02ContainerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (novareRef.current && adminContainerRef.current) {
+                const novareHeight = novareRef.current.offsetHeight;
+                adminContainerRef.current.style.height = `${novareHeight}px`;
+            }
+            if (filefrontRef.current && filefront02ContainerRef.current) {
+                const filefrontHeight = filefrontRef.current.offsetHeight;
+                filefront02ContainerRef.current.style.height = `${filefrontHeight}px`;
+            }
+        };
+
+        if (novareRef.current) {
+            novareRef.current.onload = handleResize;
+            handleResize();
+        }
+        if (filefrontRef.current) {
+            filefrontRef.current.onload = handleResize;
+            handleResize();
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <Layout>
             <Head>
@@ -60,9 +99,7 @@ const Home = () => {
                     </Heading>
                     <Paragraph>
                         <span className="exagsentence">
-                            Our solutions make it easy to provide Augmented Reality (AR)
-                            applications that superimpose information on real space in places and
-                            ways that have never been seen before.
+                            We make building information visible and easy to understand through AI and AR technology
                         </span>
                     </Paragraph>
                 </Section>
@@ -76,140 +113,110 @@ const Home = () => {
                 />
 
                 <Section delay={0.2}>
-                    <Heading as="h1" variant="section-title">
-                        Product
-                    </Heading>
+                    <div style={{ width: '80%', margin: '0 auto' }}>
+                        <Heading as="h1" variant="section-title">
+                            Products
+                        </Heading>
+
                     <Paragraph>
                         <span className="exagsentence" style={{ margin: '0 0 20px 0' }}>
-                            - Indoor AR Cloud Service (IndooAR) -
+                            - Indoor Spatial Information Management System IndooAR -
                         </span>
                         <span className="exagsentence">
-                            IndooAR provides guidance applications and AR content by linking
-                            information to indoor space.
+                            A system that allows spatial management of information by linking information to indoor spaces
                         </span>
                     </Paragraph>
-                    <div className="flex">
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/vps.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="VPS"
-                                    className="svgs"
-                                />
-                                <Subsection>Indoor locating</Subsection>
-                                <br />
-                                Provides a VPS (Visual Positioning System) to locate in indoor
-                                spaces where GPS cannot be used, using only a smartphone.
-                            </Paragraph>
+                    
+                    <div className="flex" style={{ gap: '2rem', margin: '2rem 0 1rem 0' }}>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img ref={novareRef} src={url('/images/indooar/IndooAR_NOVARE_3.png')} alt="IndooAR NOVARE 3" className="imgs" style={{ width: '100%', height: 'auto' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>Identify indoor location information through image recognition and position markers.<br></br>Easily record work with location information on-site.</p>
+                            </div>
                         </div>
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/reg.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="Register items"
-                                    className="svgs"
-                                />
-                                <Subsection>
-                                    Integrating item location info with real space
-                                </Subsection>
-                                <br />
-                                Allows the product’s location and AR contents to be set in indoor
-                                spaces, with real-time updates through API.
-                            </Paragraph>
-                        </div>
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/navigate.svg')}
-                                    style={{ display: 'block', margin: 'auto' }}
-                                    alt="Navigation"
-                                    className="svgs"
-                                />
-                                <Subsection>Guidance and display of AR content</Subsection>
-                                <br />
-                                Guidances are provided based on the identified location and the
-                                registered location of the item. AR contents can be displayed only
-                                with a setting on the console.
-                            </Paragraph>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div ref={adminContainerRef} style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img src={url('/images/indooar/indooar_admin.png')} alt="IndooAR Admin" className="imgs" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>Work records with location information can be easily checked on a map in the management screen.<br></br>AR manuals can also be easily edited on the management screen.</p>
+                            </div>
                         </div>
                     </div>
-                </Section>
 
-                <div id="usecase" />
-                <div
-                    style={{
-                        width: '100%',
-                        height: '60px',
-                    }}
-                />
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                        <Link href="/indooar" className="more">
+                            <svg width="300" height="62">
+                                <linearGradient id="grad1">
+                                    <stop offset="0%" stopColor="#3054d6" />
+                                    <stop offset="100%" stopColor="#3054d6" />
+                                </linearGradient>
+                                <rect
+                                    x="5"
+                                    y="5"
+                                    rx="25"
+                                    fill="none"
+                                    stroke="url(#grad1)"
+                                    width="266"
+                                    height="50"
+                                ></rect>
+                            </svg>
+                            <span>See IndooAR Details</span>
+                        </Link>
+                    </div>
 
-                <Section delay={0.3}>
-                    <Heading as="h1" variant="section-title">
-                        Usecases
-                    </Heading>
+                    <div style={{ borderTop: '1px solid #eee', margin: '4rem 0 3rem 0' }} />
 
-                    <div className="flex">
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/super.jpg')}
-                                    alt="Retail stores"
-                                    className="imgs"
-                                />
-                                <Subsection>Retail stores</Subsection>
-                                <br />
-                                Guides users to the products they want and displays AR promotions
-                                tailored to the sales floor. Even shopping with characters!
-                                <br />
-                            </Paragraph>
+                    <Paragraph>
+                        <span className="exagsentence" style={{ margin: '0 0 20px 0' }}>
+                            - AI Drawing Management Tool Filefront -
+                        </span>
+                        <span className="exagsentence">
+                            A system that allows easy searching of PDF drawing contents
+                        </span>
+                    </Paragraph>
+                    
+                    <div className="flex" style={{ gap: '2rem', margin: '2rem 0 1rem 0' }}>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img ref={filefrontRef} src={url('/images/filefront/filefront_01.png')} alt="Filefront AI Analysis" className="imgs" style={{ width: '100%', height: 'auto' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>Search PDF contents using OCR analysis.<br></br>AI also tags each page for conditional searching.</p>
+                            </div>
                         </div>
-
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/underground.jpg')}
-                                    alt="City Facilities"
-                                    className="imgs"
-                                />
-                                <Subsection>City Facilities</Subsection>
-                                <br />
-                                Guides through the facility and presents recommended information.
-                                Coupons and hands-on Exhibits in AR for shops and restaurants!
-                                <br />
-                            </Paragraph>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div ref={filefront02ContainerRef} style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff' }}>
+                                <img src={url('/images/filefront/filefront_02.png')} alt="Filefront Search Function" className="imgs" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>Link and manage other drawings to floor plans. Writing is also possible.</p>
+                            </div>
                         </div>
+                    </div>
 
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/repos.jpg')}
-                                    alt="Warehouses"
-                                    className="imgs"
-                                />
-                                <Subsection>Warehouses</Subsection>
-                                <br />
-                                Picking products and parts can be made more efficient using IndooAR.
-                                Even beginners can reduce time and errors!
-                                <br />
-                            </Paragraph>
-                        </div>
-
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <img
-                                    src={url('/images/exhibi.jpg')}
-                                    alt="Exhibitions"
-                                    className="imgs"
-                                />
-                                <Subsection>Exhibitions</Subsection>
-                                <br />
-                                It&apos;s easy to get lost in many booths at an exhibition. Identify
-                                where you are and get smooth guidance to your destination!
-                                <br />
-                            </Paragraph>
-                        </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                        <Link href="/filefront" className="more">
+                            <svg width="300" height="62">
+                                <linearGradient id="grad2">
+                                    <stop offset="0%" stopColor="#3054d6" />
+                                    <stop offset="100%" stopColor="#3054d6" />
+                                </linearGradient>
+                                <rect
+                                    x="5"
+                                    y="5"
+                                    rx="25"
+                                    fill="none"
+                                    stroke="url(#grad2)"
+                                    width="266"
+                                    height="50"
+                                ></rect>
+                            </svg>
+                            <span>See Filefront Details</span>
+                        </Link>
+                    </div>
                     </div>
                 </Section>
 
@@ -220,46 +227,12 @@ const Home = () => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.4}>
+                <Section delay={0.3}>
                     <Heading as="h1" variant="section-title">
                         News
                     </Heading>
                     <NewsDiv>
-                        <NewsHeading
-                            title="Nominated for TechBiz2023"
-                            date="2023/8/8"
-                            link="https://dcaj-techbiz.com/news/selected-technologies-for-techbiz2023"
-                        ></NewsHeading>
-
-                        <NewsHeading
-                            title="Idea Prize in the 2022 Student Business Plan Contest (Japan)"
-                            date="2022/12/20"
-                            link="http://www.gakusei-sc.or.jp/pdf/r3bis_4_1.pdf?221223"
-                        ></NewsHeading>
-
-                        <NewsHeading
-                            title="Nikkan Kogyo Shimbun Award at the 19th Campus Venture Grand Prix in Tokyo"
-                            date="2022/12/1"
-                            link="https://cvg.nikkan.co.jp/tokyo_backnumber/2022/"
-                        ></NewsHeading>
-
-                        <NewsHeading
-                            title="Nominated for the 2022 Ino-Vation Generation Award category by the Japanese Ministry of Internal Affairs and Communications."
-                            date="2022/11/30"
-                            link="https://www.inno.go.jp/result/2022/generation/nominate/"
-                        ></NewsHeading>
-
-                        <NewsHeading
-                            title="Saza Coffee Award and Joyo Bank Award at the Ibaraki Prefecture Student Business Plan Contest 2022"
-                            date="2022/11/27"
-                            link="https://www.scc.ibaraki.ac.jp/contest2022final/"
-                        ></NewsHeading>
-
-                        <NewsHeading
-                            title="Speaker at the Technology and Education Exhibition 2022"
-                            date="2022/9/10"
-                            link="https://talent.supporterz.jp/geekten/2022/exhibition.html#theme4"
-                        ></NewsHeading>
+                        <PostsList isHome post={newPosts}></PostsList>
                     </NewsDiv>
                 </Section>
 
@@ -270,65 +243,44 @@ const Home = () => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.5}>
+                <Section delay={0.4}>
                     <Heading as="h1" variant="section-title">
                         Members
                     </Heading>
                     <SimpleGrid columns={1} gap={6}>
-                        <GridItem
-                            title="Shota Imamura"
-                            nefposition="Representative Director, CEO"
-                            thumbnail={imamuu}
-                        >
-                            <br />
-                            After graduating from University of Tsukuba with a bachelor’s degree in
-                            Information Science, he entered the Graduate School of the University of
-                            Tokyo, the Rekimoto Lab.
-                            <br />
-                            In addition to the development of the indoor AR cloud, he is also
-                            involved in research on applications of AI technology and the gaze
-                            interface for AR/VR head-mounted displays.
-                            <br />
-                            As a long-term intern at Zigexn Group, he was in charge of launching new
-                            businesses as a PM. Also, after developing and managing an event-based
-                            SNS, he launched Nefront.
-                            <br />
-                            <a
-                                href="https://imamuus.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sim"
-                            >
-                                Imamura&#39;s Homepage
-                            </a>
+                        <GridItem title="Shota Imamura" nefposition="Representative Director, CEO" thumbnail={imamuu} personalSiteUrl="https://imamuus.com/">
+                            <div style={{ textAlign: 'center', fontSize: '16px', lineHeight: '1.6' }}>
+                                <br />
+                                After graduating from University of Tsukuba with a bachelor&apos;s degree in
+                                Information Science, he entered the Graduate School of the University of
+                                Tokyo, the Rekimoto Lab.
+                                <br />
+                                In addition to the development of the indoor AR cloud, he is also
+                                involved in research on applications of AI technology and the gaze
+                                interface for AR/VR head-mounted displays.
+                                <br />
+                                As a long-term intern at Zigexn Group, he was in charge of launching new
+                                businesses as a PM. Also, after developing and managing an event-based
+                                SNS, he launched Nefront.
+                                <br />
+                            </div>
                         </GridItem>
-                        <GridItem
-                            title="Kazuki Hemmi"
-                            nefposition="Executive Officer, COO"
-                            thumbnail={hemmi}
-                        >
-                            <br />
-                            Graduated from National Institute of Technology, Tokyo College,
-                            Department of Computer Science and Information Engineering, and entered
-                            the graduate school of University of Tsukuba.
-                            <br />
-                            Since then, he&apos;s been studying AutoML (Automated Machine Learning)
-                            at the Social Intelligence Research Team, Artificial Intelligence
-                            Research Center, National Institute of Advanced Industrial Science and
-                            Technology (AIST), while studying management engineering at the
-                            University of Tsukuba Graduate School.
-                            <br />
-                            A genuine idea man who just loves to touch new technology.
-                            <br />
-                            <a
-                                href="https://itigo11111.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sim"
-                            >
-                                Hemmi&#39;s Homepage
-                            </a>
-                            <br />
+                        <GridItem title="Kazuki Hemmi" nefposition="Executive Officer, COO" thumbnail={hemmi} personalSiteUrl="https://itigo11111.com/">
+                            <div style={{ textAlign: 'center', fontSize: '16px', lineHeight: '1.6' }}>
+                                <br />
+                                Graduated from National Institute of Technology, Tokyo College,
+                                Department of Computer Science and Information Engineering, and entered
+                                the graduate school of University of Tsukuba.
+                                <br />
+                                Since then, he&apos;s been studying AutoML (Automated Machine Learning)
+                                at the Social Intelligence Research Team, Artificial Intelligence
+                                Research Center, National Institute of Advanced Industrial Science and
+                                Technology (AIST), while studying management engineering at the
+                                University of Tsukuba Graduate School.
+                                <br />
+                                A genuine idea man who just loves to touch new technology.
+                                <br />
+                            </div>
                         </GridItem>
                     </SimpleGrid>
                 </Section>
@@ -340,20 +292,22 @@ const Home = () => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.6}>
+                <Section delay={0.5}>
                     <Heading as="h1" variant="section-title">
                         Company
                     </Heading>
                     <Box className="table">
                         <br />
-                        Company Name: Nefront Inc.
+                        ・Company Name: Nefront Inc.
                         <br />
-                        Address: Shibuya Dougenzaka Tokyu Building 2F-C, 1-10-8, Shibuya Dogenzaka,
+                        ・Address: Shibuya Dougenzaka Tokyu Building 2F-C, 1-10-8, Shibuya Dogenzaka,
                         Tokyo, Japan
                         <br />
-                        CEO: Shota Imamura
+                        ・CEO: Shota Imamura
                         <br />
-                        Founded: June 2021
+                        ・Capital: 810,000 JPY (including capital reserves)
+                        <br />
+                        ・Founded: June 2021
                         <br />
                     </Box>
                 </Section>
@@ -365,7 +319,7 @@ const Home = () => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.7}>
+                <Section delay={0.6}>
                     <Heading as="h1" variant="section-title">
                         Contact
                     </Heading>
@@ -386,3 +340,10 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+    const newPosts = getNewPosts(['title', 'date', 'slug']);
+    return {
+        props: { newPosts },
+    };
+};
