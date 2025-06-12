@@ -5,7 +5,7 @@ body {
 #hoge {
     width: 100%;
     height: 70vh;
-    background-image: url(https://nefront.com/images/background.jpg);
+    background-image: url(/images/index/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

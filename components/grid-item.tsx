@@ -1,21 +1,46 @@
 import { url } from 'lib/img';
 import { Box, LinkBox, Text } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 type Props = {
     children: any;
     title: string;
     nefposition: string;
     thumbnail: string;
+    personalSiteUrl?: string;
 };
 
-export const GridItem = ({ children, title, nefposition, thumbnail }: Props) => (
+export const GridItem = ({ children, title, nefposition, thumbnail, personalSiteUrl }: Props) => (
     <Box w="100%">
         <LinkBox>
             <img src={url(thumbnail)} alt={title} className="grid-item-thumbnail" />
-            <Text fontSize={25} textAlign="center">
-                {title}
-            </Text>
+            <Box position="relative" textAlign="center">
+                <Text fontSize={25}>
+                    {title}
+                </Text>
+                {personalSiteUrl && (
+                    <Box 
+                        position="absolute" 
+                        top="50%" 
+                        left="50%" 
+                        transform="translateY(calc(-50% + 0.2em))"
+                        marginLeft="calc(2.5em + 16px)"
+                    >
+                        <a 
+                            href={personalSiteUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ 
+                                display: 'inline-flex', 
+                                alignItems: 'center'
+                            }}
+                        >
+                            <ExternalLinkIcon color="blue.500" boxSize={5} />
+                        </a>
+                    </Box>
+                )}
+            </Box>
             <Text fontSize={18} textAlign="center" color="gray">
                 {nefposition}
             </Text>

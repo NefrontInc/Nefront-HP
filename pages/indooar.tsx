@@ -10,7 +10,7 @@ import Subsection from '@/subsection';
 ReactGA.initialize('G-FBQ0WYNGEZ');
 ReactGA.send('pageview');
 
-const Products = () => {
+const IndooAR = () => {
     return (
         <Layout>
             <Container maxW="1200px">
@@ -34,7 +34,7 @@ const Products = () => {
                     </Paragraph>
                     <div style={{ margin: '2rem 0' }}>
                         <img
-                            src={url('/images/mall.jpg')}
+                            src={url('/images/indooar/indooar_about.png')}
                             style={{ width: '100%', maxWidth: '800px', display: 'block', margin: 'auto' }}
                             alt="IndooAR システム構成図"
                             className="imgs"
@@ -64,7 +64,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/super.jpg')} alt="点検箇所の確認" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_01.png')} alt="点検箇所の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>01 点検箇所の確認</h3>
@@ -75,7 +75,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/underground.jpg')} alt="点検方法の確認" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_02.png')} alt="点検方法の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>02 点検方法の確認</h3>
@@ -96,7 +96,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/mall.jpg')} alt="点検報告" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_03.png')} alt="点検報告" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>03 点検報告</h3>
@@ -107,7 +107,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/background.jpg')} alt="報告内容の確認" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_04.png')} alt="報告内容の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>04 報告内容の確認</h3>
@@ -128,7 +128,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/repos.jpg')} alt="修繕内容の検討" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_05.png')} alt="修繕内容の検討" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>05 修繕内容の検討</h3>
@@ -139,7 +139,7 @@ const Products = () => {
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
                             <Paragraph>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                                    <img src={url('/images/exhibi.jpg')} alt="修繕箇所の確認" className="imgs" style={{ width: '100%' }} />
+                                    <img src={url('/images/indooar/indooar_06.png')} alt="修繕箇所の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
                                 <div style={{ textAlign: 'center' }}>
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>06 修繕箇所の確認</h3>
@@ -181,4 +181,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default IndooAR;

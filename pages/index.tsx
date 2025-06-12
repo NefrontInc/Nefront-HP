@@ -2,20 +2,19 @@ import { url } from 'lib/img';
 import { getNewPosts } from 'lib/posts';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactGA from 'react-ga4';
 import { Post } from 'types/posts';
 import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { GridItem } from '@/grid-item';
 import Layout from '@/layouts/article';
-import NewsHeading from '@/newsheading';
 import Paragraph from '@/paragraph';
 import PostsList from '@/plist';
 import Section from '@/section';
 
-const imamuu = '/images/imamura.jpg';
-const hemmi = '/images/hemmi.jpg';
+const imamuu = '/images/index/imamura.jpg';
+const hemmi = '/images/index/hemmi.jpg';
 
 ReactGA.initialize('G-FBQ0WYNGEZ');
 ReactGA.send('pageview');
@@ -37,6 +36,36 @@ const NewsDiv = styled.ul`
 `;
 
 const Home = ({ newPosts }: Props) => {
+    const novareRef = useRef<HTMLImageElement>(null);
+    const adminContainerRef = useRef<HTMLDivElement>(null);
+    const filefrontRef = useRef<HTMLImageElement>(null);
+    const filefront02ContainerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (novareRef.current && adminContainerRef.current) {
+                const novareHeight = novareRef.current.offsetHeight;
+                adminContainerRef.current.style.height = `${novareHeight}px`;
+            }
+            if (filefrontRef.current && filefront02ContainerRef.current) {
+                const filefrontHeight = filefrontRef.current.offsetHeight;
+                filefront02ContainerRef.current.style.height = `${filefrontHeight}px`;
+            }
+        };
+
+        if (novareRef.current) {
+            novareRef.current.onload = handleResize;
+            handleResize();
+        }
+        if (filefrontRef.current) {
+            filefrontRef.current.onload = handleResize;
+            handleResize();
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <Layout>
             <Container maxW="99999999px">
@@ -79,24 +108,110 @@ const Home = ({ newPosts }: Props) => {
                 />
 
                 <Section delay={0.2}>
-                    <Heading as="h1" variant="section-title">
-                        Products
-                    </Heading>
+                    <div style={{ width: '80%', margin: '0 auto' }}>
+                        <Heading as="h1" variant="section-title">
+                            Products
+                        </Heading>
 
                     <Paragraph>
                         <span className="exagsentence" style={{ margin: '0 0 20px 0' }}>
                             - 屋内空間情報管理システム IndooAR -
                         </span>
                         <span className="exagsentence">
-                            屋内空間に情報を紐づけて、誘導アプリケーションやARコンテンツを提供するシステムです。
+                            屋内空間に情報を紐付けて、空間的に情報を管理できるシステム
                         </span>
                     </Paragraph>
-                    <div className="flex">
-                        <div className="flexdiv">
-                            <Paragraph>
-                                <Link href="/products" className="sim">詳細を見る</Link>
-                            </Paragraph>
+                    
+                    <div className="flex" style={{ gap: '2rem', margin: '2rem 0 1rem 0' }}>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img ref={novareRef} src={url('/images/indooar/IndooAR_NOVARE_3.png')} alt="IndooAR NOVARE 3" className="imgs" style={{ width: '100%', height: 'auto' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>画像認識や位置マーカーにより建物内の位置情報を特定。<br></br>現場で簡単に位置情報付きで作業を記録。</p>
+                            </div>
                         </div>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div ref={adminContainerRef} style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img src={url('/images/indooar/indooar_admin.png')} alt="IndooAR Admin" className="imgs" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>位置情報付きの作業記録は管理画面で地図上で簡単に確認。<br></br>ARマニュアルも管理画面上で簡単に編集可能。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                        <Link href="/indooar" className="more">
+                            <svg width="300" height="62">
+                                <linearGradient id="grad1">
+                                    <stop offset="0%" stopColor="#3054d6" />
+                                    <stop offset="100%" stopColor="#3054d6" />
+                                </linearGradient>
+                                <rect
+                                    x="5"
+                                    y="5"
+                                    rx="25"
+                                    fill="none"
+                                    stroke="url(#grad1)"
+                                    width="266"
+                                    height="50"
+                                ></rect>
+                            </svg>
+                            <span>IndooARの詳細を見る</span>
+                        </Link>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid #eee', margin: '4rem 0 3rem 0' }} />
+
+                    <Paragraph>
+                        <span className="exagsentence" style={{ margin: '0 0 20px 0' }}>
+                            - AI図面管理ツール Filefront -
+                        </span>
+                        <span className="exagsentence">
+                            PDFの図面の中身まで簡単に検索できるシステム
+                        </span>
+                    </Paragraph>
+                    
+                    <div className="flex" style={{ gap: '2rem', margin: '2rem 0 1rem 0' }}>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                                <img ref={filefrontRef} src={url('/images/filefront/filefront_01.png')} alt="Filefront AI解析" className="imgs" style={{ width: '100%', height: 'auto' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>PDFの中身までOCRで解析して検索。<br></br>さらにページ毎にAIがタグ付けして条件検索も。</p>
+                            </div>
+                        </div>
+                        <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
+                            <div ref={filefront02ContainerRef} style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff' }}>
+                                <img src={url('/images/filefront/filefront_02.png')} alt="Filefront 検索機能" className="imgs" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                            </div>
+                            <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                                <p style={{ margin: '0', fontSize: '16px', color: '#333', fontWeight: '500' }}>平面図に他の図面を紐付けて管理。書き込みも可能。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                        <Link href="/filefront" className="more">
+                            <svg width="300" height="62">
+                                <linearGradient id="grad2">
+                                    <stop offset="0%" stopColor="#3054d6" />
+                                    <stop offset="100%" stopColor="#3054d6" />
+                                </linearGradient>
+                                <rect
+                                    x="5"
+                                    y="5"
+                                    rx="25"
+                                    fill="none"
+                                    stroke="url(#grad2)"
+                                    width="266"
+                                    height="50"
+                                ></rect>
+                            </svg>
+                            <span>Filefrontの詳細を見る</span>
+                        </Link>
+                    </div>
                     </div>
                 </Section>
 
@@ -128,44 +243,30 @@ const Home = ({ newPosts }: Props) => {
                         Members
                     </Heading>
                     <SimpleGrid columns={1} gap={6}>
-                        <GridItem title="今村翔太" nefposition="代表取締役 CEO" thumbnail={imamuu}>
-                            <br />
-                            筑波大学情報科学類卒業後、東京大学大学院 暦本研究室へ進学。
-                            <br />
-                            屋内ARクラウドの開発・事業化の他、AIの活用やAR/VRヘッドマウントディスプレイ向け視線インタフェースの研究も行っている。
-                            <br />
-                            じげんグループの長期インターンにて、PMとして新規事業の立ち上げ等を担った後、イベント募集を起点としたSNSの開発・運営を経て、Nefrontの立ち上げへ。
-                            <br />
-                            <a
-                                href="https://imamuus.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sim"
-                            >
-                                今村個人サイト
-                            </a>
-                            <br />
+                        <GridItem title="今村翔太" nefposition="代表取締役 CEO" thumbnail={imamuu} personalSiteUrl="https://imamuus.com/">
+                            <div style={{ textAlign: 'center', fontSize: '16px', lineHeight: '1.6' }}>
+                                <br />
+                                筑波大学情報科学類卒業後、東京大学大学院 暦本研究室へ進学。
+                                <br />
+                                屋内ARクラウドの開発・事業化の他、AIの活用やAR/VRヘッドマウントディスプレイ向け視線インタフェースの研究も行っている。
+                                <br />
+                                じげんグループの長期インターンにて、PMとして新規事業の立ち上げ等を担った後、イベント募集を起点としたSNSの開発・運営を経て、Nefrontの立ち上げへ。
+                                <br />
+                            </div>
                         </GridItem>
-                        <GridItem title="逸見一喜" nefposition="執行役員 COO" thumbnail={hemmi}>
-                            <br />
-                            国立東京高専情報工学科＆同専攻科卒業後、筑波大学大学院に進学。
-                            <br />
-                            現在は筑波大学大学院
-                            博士後期課程で経営工学を専攻しつつ、産業技術総合研究所
-                            人工知能研究センター
-                            社会知能研究チームにてAutoML（機械学習の自動化）の研究を行っている。
-                            <br />
-                            新しい技術を触るのがとにかく大好きな生粋のアイデアマン。
-                            <br />
-                            <a
-                                href="https://itigo11111.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sim"
-                            >
-                                逸見個人サイト
-                            </a>
-                            <br />
+                        <GridItem title="逸見一喜" nefposition="執行役員 COO" thumbnail={hemmi} personalSiteUrl="https://itigo11111.com/">
+                            <div style={{ textAlign: 'center', fontSize: '16px', lineHeight: '1.6' }}>
+                                <br />
+                                国立東京高専情報工学科＆同専攻科卒業後、筑波大学大学院に進学。
+                                <br />
+                                現在は筑波大学大学院
+                                博士後期課程で経営工学を専攻しつつ、産業技術総合研究所
+                                人工知能研究センター
+                                社会知能研究チームにてAutoML（機械学習の自動化）の研究を行っている。
+                                <br />
+                                新しい技術を触るのがとにかく大好きな生粋のアイデアマン。
+                                <br />
+                            </div>
                         </GridItem>
                     </SimpleGrid>
                 </Section>
