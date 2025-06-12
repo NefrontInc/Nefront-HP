@@ -251,7 +251,7 @@ const Home = ({ newPosts }: Props) => {
                         <GridItem title="Shota Imamura" nefposition="Representative Director, CEO" thumbnail={imamuu} personalSiteUrl="https://imamuus.com/">
                             <div style={{ textAlign: 'center', fontSize: '16px', lineHeight: '1.6' }}>
                                 <br />
-                                After graduating from University of Tsukuba with a bachelor's degree in
+                                After graduating from University of Tsukuba with a bachelor&apos;s degree in
                                 Information Science, he entered the Graduate School of the University of
                                 Tokyo, the Rekimoto Lab.
                                 <br />
@@ -272,7 +272,7 @@ const Home = ({ newPosts }: Props) => {
                                 Department of Computer Science and Information Engineering, and entered
                                 the graduate school of University of Tsukuba.
                                 <br />
-                                Since then, he's been studying AutoML (Automated Machine Learning)
+                                Since then, he&apos;s been studying AutoML (Automated Machine Learning)
                                 at the Social Intelligence Research Team, Artificial Intelligence
                                 Research Center, National Institute of Advanced Industrial Science and
                                 Technology (AIST), while studying management engineering at the

@@ -2,6 +2,7 @@ import { url } from 'lib/img';
 import { Box, LinkBox, Text } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { useEffect, useState } from 'react';
 
 type Props = {
     children: any;
@@ -11,43 +12,51 @@ type Props = {
     personalSiteUrl?: string;
 };
 
-export const GridItem = ({ children, title, nefposition, thumbnail, personalSiteUrl }: Props) => (
-    <Box w="100%">
-        <LinkBox>
-            <img src={url(thumbnail)} alt={title} className="grid-item-thumbnail" />
-            <Box position="relative" textAlign="center">
-                <Text fontSize={25}>
-                    {title}
-                </Text>
-                {personalSiteUrl && (
-                    <Box 
-                        position="absolute" 
-                        top="50%" 
-                        left="50%" 
-                        transform="translateY(calc(-50% + 0.2em))"
-                        marginLeft={`calc(${title.length * 0.3}em + 1em + 20px)`}
-                    >
-                        <a 
-                            href={personalSiteUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            style={{ 
-                                display: 'inline-flex', 
-                                alignItems: 'center'
-                            }}
+export const GridItem = ({ children, title, nefposition, thumbnail, personalSiteUrl }: Props) => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    return (
+        <Box w="100%">
+            <LinkBox>
+                <img src={url(thumbnail)} alt={title} className="grid-item-thumbnail" />
+                <Box position="relative" textAlign="center">
+                    <Text fontSize={25}>
+                        {title}
+                    </Text>
+                    {personalSiteUrl && isClient && (
+                        <Box 
+                            position="absolute" 
+                            top="50%" 
+                            left="50%" 
+                            transform="translateY(calc(-50% + 0.2em))"
+                            marginLeft={`calc(${title.length * 0.3}em + 1em + 20px)`}
                         >
-                            <ExternalLinkIcon color="blue.500" boxSize={5} />
-                        </a>
-                    </Box>
-                )}
-            </Box>
-            <Text fontSize={18} textAlign="center" color="gray">
-                {nefposition}
-            </Text>
-            <Box fontSize={14}>{children}</Box>
-        </LinkBox>
-    </Box>
-);
+                            <a 
+                                href={personalSiteUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center'
+                                }}
+                            >
+                                <ExternalLinkIcon color="blue.500" boxSize={5} />
+                            </a>
+                        </Box>
+                    )}
+                </Box>
+                <Text fontSize={18} textAlign="center" color="gray">
+                    {nefposition}
+                </Text>
+                <Box fontSize={14}>{children}</Box>
+            </LinkBox>
+        </Box>
+    );
+};
 
 export const GridItemStyle = () => (
     <Global
