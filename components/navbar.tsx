@@ -129,9 +129,6 @@ const Navbar = (props: any) => {
                     <LinkItem href="product" path={path}>
                         Product
                     </LinkItem>
-                    <LinkItem href="usecase" path={path}>
-                        Usecase
-                    </LinkItem>
                     <LinkItem href="news" path={path}>
                         News
                     </LinkItem>
@@ -166,9 +163,6 @@ const Navbar = (props: any) => {
                                 </MenuItem>
                                 <MenuItem as={HambItem} href="product">
                                     Product
-                                </MenuItem>
-                                <MenuItem as={HambItem} href="usecase">
-                                    Usecase
                                 </MenuItem>
                                 <MenuItem as={HambItem} href="news">
                                     News
