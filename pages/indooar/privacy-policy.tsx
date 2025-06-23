@@ -150,7 +150,7 @@ const IndooARPrivacyPolicy = () => {
 
                 <Section delay={0.8}>
                     <Heading as="h2" variant="section-title">
-                        第8条 問い合わせ窓口
+                        第7条 問い合わせ窓口
                     </Heading>
                     <Paragraph>
                         本プライバシーポリシーに対するご意見、ご質問、その他個人情報の取り扱いに関するお問い合わせ及び第5条第1項各号に基づくご請求は、以下のメールアドレスへご連絡ください。
@@ -162,7 +162,7 @@ const IndooARPrivacyPolicy = () => {
 
                 <Section delay={0.9}>
                     <Heading as="h2" variant="section-title">
-                        第9条 改訂
+                        第8条 改訂
                     </Heading>
                     <Paragraph>
                         本プライバシーポリシーを改訂する場合は、改訂日及び改訂内容を速やかに当社のウェブサイト上で告知します。
