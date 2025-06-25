@@ -62,7 +62,7 @@ const IndooAR = () => {
                     </Subsection>
                     <div className="flex" style={{ gap: '2rem' }}>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_01.png')} alt="点検箇所の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -70,10 +70,10 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>01 点検箇所の確認</h3>
                                     <p>点検箇所をフロアマップ上や現実空間への重ね合わせで確認</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_02.png')} alt="点検方法の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -81,7 +81,7 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>02 点検方法の確認</h3>
                                     <p>点検箇所に紐付けられた文書や動画ファイルを表示</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                     </div>
                 </Section>
@@ -94,7 +94,7 @@ const IndooAR = () => {
                     </Subsection>
                     <div className="flex" style={{ gap: '2rem' }}>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_03.png')} alt="点検報告" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -102,10 +102,10 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>03 点検報告</h3>
                                     <p>アプリ上から直感的に点検の報告を実施</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_04.png')} alt="報告内容の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -113,7 +113,7 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>04 報告内容の確認</h3>
                                     <p>担当者がフロアマップ上で点検内容を確認</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                     </div>
                 </Section>
@@ -126,7 +126,7 @@ const IndooAR = () => {
                     </Subsection>
                     <div className="flex" style={{ gap: '2rem' }}>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_05.png')} alt="修繕内容の検討" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -134,10 +134,10 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>05 修繕内容の検討</h3>
                                     <p>報告箇所ごとのチャットルームで修繕内容を検討</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                         <div className="flexdiv" style={{ flex: '1', minWidth: '300px' }}>
-                            <Paragraph>
+                            <div>
                                 <div style={{ border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                                     <img src={url('/images/indooar/indooar_06.png')} alt="修繕箇所の確認" className="imgs" style={{ width: '100%' }} />
                                 </div>
@@ -145,7 +145,7 @@ const IndooAR = () => {
                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: '#0044cc', margin: '0 0 1rem 0' }}>06 修繕箇所の確認</h3>
                                     <p>修繕箇所をフロアマップ上や現実空間への重ね合わせで確認</p>
                                 </div>
-                            </Paragraph>
+                            </div>
                         </div>
                     </div>
                 </Section>
