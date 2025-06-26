@@ -43,7 +43,7 @@
         "react-scroll": "^1.8.9",
         "react-share": "^5.0.0",
         "react-simple-typewriter": "^5.0.1",
-        "typewriter-effect": "^2.19.0"
+        "typewriter-effect": "^2.22.0"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.2.0",
