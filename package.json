@@ -10,15 +10,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/lapla-cogito/Nefront-HP.git"
+        "url": "git+https://github.com/NefrontInc/Nefront-HP.git"
     },
     "keywords": [],
     "author": "",
     "license": "UNLICENSED",
     "bugs": {
-        "url": "https://github.com/lapla-cogito/Nefront-HP/issues"
+        "url": "https://github.com/NefrontInc/Nefront-HP/issues"
     },
-    "homepage": "https://github.com/lapla-cogito/Nefront-HP#readme",
+    "homepage": "https://github.com/NefrontInc/Nefront-HP#readme",
     "dependencies": {
         "@chakra-ui/icons": "^2.0.17",
         "@chakra-ui/react": "^2.5.0",

@@ -6,7 +6,7 @@ module.exports = {
     output: 'export',
     staticPageGenerationTimeout: 1000,
     images: {
-        domains: ['lapla-cogito.github.io'],
+        domains: ['nefrontinc.github.io'],
     },
     reactStrictMode: true,
     swcMinify: true,
