@@ -1,4 +1,4 @@
-export const name = 'laplacian';
+export const name = 'nefront';
 
 export const firstShowPostsNums = 10;
 
