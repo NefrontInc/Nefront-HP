@@ -147,7 +147,7 @@ const Home = ({ newPosts }: Props) => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-                        <Link href="/indooar" className="more">
+                        <Link href="/en/indooar" className="more">
                             <svg width="300" height="62">
                                 <linearGradient id="grad1">
                                     <stop offset="0%" stopColor="#3054d6" />
@@ -198,7 +198,7 @@ const Home = ({ newPosts }: Props) => {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-                        <Link href="/filefront" className="more">
+                        <Link href="/en/filefront" className="more">
                             <svg width="300" height="62">
                                 <linearGradient id="grad2">
                                     <stop offset="0%" stopColor="#3054d6" />
