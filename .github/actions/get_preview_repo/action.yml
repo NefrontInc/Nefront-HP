@@ -5,7 +5,7 @@ runs:
     steps:
         - name: Set repository owner name
           id: owner
-          run: echo "result=Nefront-HP" >> $GITHUB_OUTPUT
+          run: echo "result=NefrontInc" >> $GITHUB_OUTPUT
           shell: bash
 
         - name: Set repository name
