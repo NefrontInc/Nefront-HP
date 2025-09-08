@@ -43,6 +43,16 @@ type Props = {
     children: any;
 };
 
+const PageLinkItem = ({ href, children }: Props) => {
+    return (
+        <NextLink href={href}>
+            <p className="textWrapper">
+                <span className="pseudoElement pseudoElement__scale">{children}</span>
+            </p>
+        </NextLink>
+    );
+};
+
 const LinkItem = ({ href, children }: Props) => {
     if (isRootPage() === true) {
         return (
@@ -138,6 +148,9 @@ const Navbar = (props: any) => {
                     <LinkItem href="company" path={path}>
                         Company
                     </LinkItem>
+                    <LinkItem href="recruit" path={path}>
+                        Recruit
+                    </LinkItem>
                     <ContactLinkItem
                         href="https://forms.gle/HJXsrsk5myVrmEqC6"
                         path={path}
@@ -172,6 +185,9 @@ const Navbar = (props: any) => {
                                 </MenuItem>
                                 <MenuItem as={HambItem} href="company">
                                     Company
+                                </MenuItem>
+                                <MenuItem as={HambItem} href="recruit">
+                                    Recruit
                                 </MenuItem>
                                 <MenuItem as={MenuLink} href="https://forms.gle/HJXsrsk5myVrmEqC6">
                                     Contact
