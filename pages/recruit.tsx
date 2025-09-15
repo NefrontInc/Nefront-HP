@@ -1,5 +1,6 @@
 import { url } from 'lib/img';
 import React, { useState } from 'react';
+import Head from 'next/head';
 import ReactGA from 'react-ga4';
 import { Box, Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import Layout from '@/layouts/article';
@@ -15,6 +16,18 @@ const Recruit = () => {
     
     return (
         <Layout>
+            <Head>
+                <title>採用情報 - Nefront Inc.</title>
+                <meta name="description" content="AIやAR技術により、建物の情報をわかりやすく見える化するためのシステムを開発しています。Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。" />
+                <meta property="og:title" content="採用情報 - Nefront Inc." />
+                <meta property="og:description" content="AIやAR技術により、建物の情報をわかりやすく見える化するためのシステムを開発しています。Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.nefront.com/recruit" />
+                <meta property="og:locale" content="ja_JP" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="採用情報 - Nefront Inc." />
+                <meta name="twitter:description" content="AIやAR技術により、建物の情報をわかりやすく見える化するためのシステムを開発しています。Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。" />
+            </Head>
             <Container maxW="1200px">
                 <div style={{ width: '100%', height: '80px' }} />
 

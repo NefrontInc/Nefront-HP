@@ -1,5 +1,6 @@
 import { url } from 'lib/img';
 import React from 'react';
+import Head from 'next/head';
 import ReactGA from 'react-ga4';
 import { Box, Container, Heading } from '@chakra-ui/react';
 import Layout from '@/layouts/article';
@@ -13,6 +14,18 @@ ReactGA.send('pageview');
 const IndooAR = () => {
     return (
         <Layout>
+            <Head>
+                <title>IndooAR - 屋内空間情報管理システム | Nefront Inc.</title>
+                <meta name="description" content="屋内空間に情報を紐付けて、空間的に情報を管理できるシステム。画像認識や位置マーカーにより建物内の位置情報を特定し、現場で簡単に位置情報付きで作業を記録。" />
+                <meta property="og:title" content="IndooAR - 屋内空間情報管理システム | Nefront Inc." />
+                <meta property="og:description" content="屋内空間に情報を紐付けて、空間的に情報を管理できるシステム。画像認識や位置マーカーにより建物内の位置情報を特定し、現場で簡単に位置情報付きで作業を記録。" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.nefront.com/indooar" />
+                <meta property="og:locale" content="ja_JP" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="IndooAR - 屋内空間情報管理システム | Nefront Inc." />
+                <meta name="twitter:description" content="屋内空間に情報を紐付けて、空間的に情報を管理できるシステム。画像認識や位置マーカーにより建物内の位置情報を特定し、現場で簡単に位置情報付きで作業を記録。" />
+            </Head>
             <Container maxW="1200px">
                 <div
                     style={{

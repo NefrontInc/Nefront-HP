@@ -148,9 +148,9 @@ const Navbar = (props: any) => {
                     <LinkItem href="company" path={path}>
                         Company
                     </LinkItem>
-                    <LinkItem href="recruit" path={path}>
+                    <PageLinkItem href="/recruit" path={path}>
                         Recruit
-                    </LinkItem>
+                    </PageLinkItem>
                     <ContactLinkItem
                         href="https://forms.gle/HJXsrsk5myVrmEqC6"
                         path={path}
@@ -186,7 +186,7 @@ const Navbar = (props: any) => {
                                 <MenuItem as={HambItem} href="company">
                                     Company
                                 </MenuItem>
-                                <MenuItem as={HambItem} href="recruit">
+                                <MenuItem as={NextLink} href="/recruit">
                                     Recruit
                                 </MenuItem>
                                 <MenuItem as={MenuLink} href="https://forms.gle/HJXsrsk5myVrmEqC6">
