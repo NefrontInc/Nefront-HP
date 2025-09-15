@@ -271,7 +271,7 @@ const Home = ({ newPosts }: Props) => {
                     </SimpleGrid>
                 </Section>
 
-                <div id="company" />
+                <div id="recruit" />
                 <div
                     style={{
                         width: '100%',
@@ -279,6 +279,42 @@ const Home = ({ newPosts }: Props) => {
                     }}
                 />
                 <Section delay={0.5}>
+                    <Heading as="h1" variant="section-title">
+                        Recruit
+                    </Heading>
+                    <p style={{ textAlign: 'center', margin: '10px' }}>
+                        Nefrontと一緒に、より良い未来を創造する仲間を募集しています
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+                        <Link href="/recruit" className="more">
+                            <svg width="300" height="62">
+                                <linearGradient id="grad3">
+                                    <stop offset="0%" stopColor="#3054d6" />
+                                    <stop offset="100%" stopColor="#3054d6" />
+                                </linearGradient>
+                                <rect
+                                    x="5"
+                                    y="5"
+                                    rx="25"
+                                    fill="none"
+                                    stroke="url(#grad3)"
+                                    width="266"
+                                    height="50"
+                                ></rect>
+                            </svg>
+                            <span>採用情報はこちら</span>
+                        </Link>
+                    </div>
+                </Section>
+
+                <div id="company" />
+                <div
+                    style={{
+                        width: '100%',
+                        height: '60px',
+                    }}
+                />
+                <Section delay={0.6}>
                     <Heading as="h1" variant="section-title">
                         Company
                     </Heading>
@@ -304,7 +340,7 @@ const Home = ({ newPosts }: Props) => {
                         height: '60px',
                     }}
                 />
-                <Section delay={0.6}>
+                <Section delay={0.7}>
                     <Heading as="h1" variant="section-title">
                         Contact
                     </Heading>
