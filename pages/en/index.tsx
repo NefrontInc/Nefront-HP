@@ -99,7 +99,8 @@ const Home = ({ newPosts }: Props) => {
                     </Heading>
                     <Paragraph>
                         <span className="exagsentence">
-                            We make building information visible and easy to understand through AI and AR technology
+                            Nefront connects building information with physical locations<br />
+                            and visualizes it intuitively with AI and AR technologies
                         </span>
                     </Paragraph>
                 </Section>
