@@ -31,9 +31,6 @@ jobs:
             - name: Delete preview repo
               uses: octokit/request-action@v2.x
               with:
-                  route: DELETE /repos/{owner}/{repo_name}
-                  accept: 'application/vnd.github+json'
-                  owner: ${{ steps.preview_repo.outputs.owner }}
-                  repo_name: ${{ steps.preview_repo.outputs.name }}
+                  route: DELETE /repos/${{ steps.preview_repo.outputs.owner }}/${{ steps.preview_repo.outputs.name }}
               env:
-                  GITHUB_TOKEN: ${{ secrets.PAT_NefrontHP_OrgNefrontHP }}
+                  GITHUB_TOKEN: ${{ secrets.PAT_HP_DEPLOY }}
