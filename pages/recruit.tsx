@@ -271,17 +271,84 @@ const Recruit = () => {
                         <Heading as="h2" variant="section-title" style={{ fontSize: '28px', marginBottom: '24px', color: '#0044cc' }}>
                             選考フロー
                         </Heading>
-                        <Box style={{ fontSize: '16px', lineHeight: '1.8' }}>
-                        1. 書類フォーム提出
-                        <br />
-                        2. 面接（1〜2回）
-                        <br />
-                        <br />
-                        ※エンジニア職は、必要に応じて模擬開発課題をお願いする場合があります
-                        <br />
-                        ※プロジェクトマネージャー職は、必要に応じて模擬提案課題をお願いする場合があります
-                        <br />
-                        ※カジュアル面談も大歓迎です
+                        <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px' }}>
+                            <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative' }}>
+                                {/* ステップ1: 書類フォーム提出 */}
+                                <Box style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                                    <div style={{ 
+                                        backgroundColor: '#0044cc', 
+                                        color: 'white', 
+                                        width: '50px',
+                                        height: '50px',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '24px',
+                                        fontWeight: 'bold',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                        flexShrink: 0,
+                                        lineHeight: '1',
+                                        textAlign: 'center'
+                                    }}>
+                                        1
+                                    </div>
+                                    <Box style={{ fontSize: '18px', fontWeight: 'bold', color: '#333' }}>
+                                        書類フォーム提出
+                                    </Box>
+                                </Box>
+                                
+                                {/* 縦の接続線 - 円の中心に合わせる */}
+                                <Box style={{ 
+                                    width: '4px', 
+                                    height: '40px', 
+                                    backgroundColor: '#0044cc',
+                                    position: 'absolute',
+                                    left: '23px',
+                                    top: '50px'
+                                }} />
+                                
+                                {/* ステップ2: 面接 - 円を真下に配置 */}
+                                <Box style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '40px' }}>
+                                    <div style={{ 
+                                        backgroundColor: '#0044cc', 
+                                        color: 'white', 
+                                        width: '50px',
+                                        height: '50px',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '24px',
+                                        fontWeight: 'bold',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                        flexShrink: 0,
+                                        lineHeight: '1',
+                                        textAlign: 'center'
+                                    }}>
+                                        2
+                                    </div>
+                                    <Box style={{ fontSize: '18px', fontWeight: 'bold', color: '#333' }}>
+                                        面接（1〜2回）
+                                    </Box>
+                                </Box>
+                            </Box>
+                            
+                            {/* 注釈 */}
+                            <Box style={{ 
+                                marginTop: '40px', 
+                                fontSize: '16px', 
+                                color: '#666',
+                                textAlign: 'left',
+                                lineHeight: '1.8',
+                                width: '100%',
+                                maxWidth: '600px',
+                                paddingLeft: '0'
+                            }}>
+                                <div>※エンジニア職は、必要に応じて模擬開発課題をお願いする場合があります</div>
+                                <div>※プロジェクトマネージャー職は、必要に応じて模擬提案課題をお願いする場合があります</div>
+                                <div>※カジュアル面談も大歓迎です</div>
+                            </Box>
                         </Box>
                     </Box>
                 </Section>
