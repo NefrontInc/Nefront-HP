@@ -2,6 +2,7 @@ import { url } from 'lib/img';
 import { getNewPosts } from 'lib/posts';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Head from 'next/head';
 import React, { useEffect, useRef } from 'react';
 import ReactGA from 'react-ga4';
 import { Post } from 'types/posts';
@@ -68,6 +69,20 @@ const Home = ({ newPosts }: Props) => {
 
     return (
         <Layout>
+            <Head>
+                <title>Nefront Inc. - AIやAR技術により、建物の情報をわかりやすく見える化</title>
+                <meta name="description" content="AIやAR技術により、建物の情報をわかりやすく見える化します" />
+                <meta property="og:title" content="Nefront Inc." />
+                <meta property="og:description" content="AIやAR技術により、建物の情報をわかりやすく見える化します" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.nefront.com/" />
+                <meta property="og:image" content="https://www.nefront.com/images/ogp/nefront-ogp.png" />
+                <meta property="og:locale" content="ja_JP" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Nefront Inc." />
+                <meta name="twitter:description" content="AIやAR技術により、建物の情報をわかりやすく見える化します" />
+                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/nefront-ogp.png" />
+            </Head>
             <Container maxW="99999999px">
                 <div id="top" />
                 <div id="parent">
@@ -283,7 +298,7 @@ const Home = ({ newPosts }: Props) => {
                         Recruit
                     </Heading>
                     <p style={{ textAlign: 'center', margin: '10px' }}>
-                        Nefrontと一緒に、より良い未来を創造する仲間を募集しています
+                        Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
                         <Link href="/recruit" className="more">

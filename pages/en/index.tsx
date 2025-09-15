@@ -70,8 +70,18 @@ const Home = ({ newPosts }: Props) => {
     return (
         <Layout>
             <Head>
-                <meta name="description" content="Nefront Inc. develops indoor AR cloud service" />
-                <title>Nefront Inc.</title>
+                <title>Nefront Inc. - Connecting building information with physical locations</title>
+                <meta name="description" content="Nefront connects building information with physical locations and visualizes it intuitively with AI and AR technologies" />
+                <meta property="og:title" content="Nefront Inc." />
+                <meta property="og:description" content="Nefront connects building information with physical locations and visualizes it intuitively with AI and AR technologies" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.nefront.com/en" />
+                <meta property="og:image" content="https://www.nefront.com/images/ogp/nefront-ogp-en.png" />
+                <meta property="og:locale" content="en_US" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Nefront Inc." />
+                <meta name="twitter:description" content="Nefront connects building information with physical locations and visualizes it intuitively with AI and AR technologies" />
+                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/nefront-ogp-en.png" />
             </Head>
             <Container maxW="99999999px">
                 <div id="top" />

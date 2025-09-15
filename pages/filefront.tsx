@@ -1,5 +1,6 @@
 import { url } from 'lib/img';
 import React, { useEffect, useRef } from 'react';
+import Head from 'next/head';
 import ReactGA from 'react-ga4';
 import { Box, Container, Heading } from '@chakra-ui/react';
 import Layout from '@/layouts/article';
@@ -43,6 +44,20 @@ const Filefront = () => {
 
     return (
         <Layout>
+            <Head>
+                <title>Filefront - AI図面管理ツール | Nefront Inc.</title>
+                <meta name="description" content="PDFの図面の中身まで簡単に検索できるシステム。PDFの中身までOCRで解析して検索。さらにページ毎にAIがタグ付けして条件検索も。" />
+                <meta property="og:title" content="Filefront - AI図面管理ツール | Nefront Inc." />
+                <meta property="og:description" content="PDFの図面の中身まで簡単に検索できるシステム。PDFの中身までOCRで解析して検索。さらにページ毎にAIがタグ付けして条件検索も。" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.nefront.com/filefront" />
+                <meta property="og:image" content="https://www.nefront.com/images/ogp/filefront-ogp.png" />
+                <meta property="og:locale" content="ja_JP" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Filefront - AI図面管理ツール | Nefront Inc." />
+                <meta name="twitter:description" content="PDFの図面の中身まで簡単に検索できるシステム。PDFの中身までOCRで解析して検索。さらにページ毎にAIがタグ付けして条件検索も。" />
+                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/filefront-ogp.png" />
+            </Head>
             <Container maxW="1200px">
                 <div
                     style={{
