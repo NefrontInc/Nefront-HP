@@ -21,12 +21,10 @@ const IndooAR = () => {
                 <meta property="og:description" content="屋内空間に情報を紐付けて、空間的に情報を管理できるシステム。画像認識や位置マーカーにより建物内の位置情報を特定し、現場で簡単に位置情報付きで作業を記録。" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.nefront.com/indooar" />
-                <meta property="og:image" content="https://www.nefront.com/images/ogp/indooar-ogp.png" />
                 <meta property="og:locale" content="ja_JP" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="IndooAR - 屋内空間情報管理システム | Nefront Inc." />
                 <meta name="twitter:description" content="屋内空間に情報を紐付けて、空間的に情報を管理できるシステム。画像認識や位置マーカーにより建物内の位置情報を特定し、現場で簡単に位置情報付きで作業を記録。" />
-                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/indooar-ogp.png" />
             </Head>
             <Container maxW="1200px">
                 <div

@@ -51,12 +51,10 @@ const Filefront = () => {
                 <meta property="og:description" content="PDFの図面の中身まで簡単に検索できるシステム。PDFの中身までOCRで解析して検索。さらにページ毎にAIがタグ付けして条件検索も。" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.nefront.com/filefront" />
-                <meta property="og:image" content="https://www.nefront.com/images/ogp/filefront-ogp.png" />
                 <meta property="og:locale" content="ja_JP" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Filefront - AI図面管理ツール | Nefront Inc." />
                 <meta name="twitter:description" content="PDFの図面の中身まで簡単に検索できるシステム。PDFの中身までOCRで解析して検索。さらにページ毎にAIがタグ付けして条件検索も。" />
-                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/filefront-ogp.png" />
             </Head>
             <Container maxW="1200px">
                 <div

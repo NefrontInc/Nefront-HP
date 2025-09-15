@@ -76,12 +76,10 @@ const Home = ({ newPosts }: Props) => {
                 <meta property="og:description" content="AIやAR技術により、建物の情報をわかりやすく見える化します" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.nefront.com/" />
-                <meta property="og:image" content="https://www.nefront.com/images/ogp/nefront-ogp.png" />
                 <meta property="og:locale" content="ja_JP" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Nefront Inc." />
                 <meta name="twitter:description" content="AIやAR技術により、建物の情報をわかりやすく見える化します" />
-                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/nefront-ogp.png" />
             </Head>
             <Container maxW="99999999px">
                 <div id="top" />

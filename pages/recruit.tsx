@@ -23,12 +23,10 @@ const Recruit = () => {
                 <meta property="og:description" content="AIやAR技術により、建物の情報をわかりやすく見える化するためのシステムを開発しています。Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.nefront.com/recruit" />
-                <meta property="og:image" content="https://www.nefront.com/images/ogp/recruit-ogp.png" />
                 <meta property="og:locale" content="ja_JP" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="採用情報 - Nefront Inc." />
                 <meta name="twitter:description" content="AIやAR技術により、建物の情報をわかりやすく見える化するためのシステムを開発しています。Nefrontで共に「欲しい情報が欲しい時に目の前にある世界の実現」を目指す、仲間を募集しています。" />
-                <meta name="twitter:image" content="https://www.nefront.com/images/ogp/recruit-ogp.png" />
             </Head>
             <Container maxW="1200px">
                 <div style={{ width: '100%', height: '80px' }} />
