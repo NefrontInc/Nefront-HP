@@ -3606,7 +3606,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-scroll@npm:^1.8.7":
+"@types/react-scroll@npm:^1.8.10":
   version: 1.8.10
   resolution: "@types/react-scroll@npm:1.8.10"
   dependencies:
@@ -8678,7 +8678,7 @@ __metadata:
     "@types/node": "npm:^20.14.10"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
-    "@types/react-scroll": "npm:^1.8.7"
+    "@types/react-scroll": "npm:^1.8.10"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
     eslint: "npm:^8.34.0"
@@ -8698,7 +8698,7 @@ __metadata:
     react-icons: "npm:^5.0.0"
     react-native: "npm:^0.73.0"
     react-router-dom: "npm:^6.23.1"
-    react-scroll: "npm:^1.8.9"
+    react-scroll: "npm:^1.9.3"
     react-share: "npm:^5.0.0"
     react-simple-typewriter: "npm:^5.0.1"
     serve: "npm:^14.2.0"
@@ -9781,16 +9781,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-scroll@npm:^1.8.9":
-  version: 1.9.0
-  resolution: "react-scroll@npm:1.9.0"
+"react-scroll@npm:^1.9.3":
+  version: 1.9.3
+  resolution: "react-scroll@npm:1.9.3"
   dependencies:
     lodash.throttle: "npm:^4.1.1"
     prop-types: "npm:^15.7.2"
   peerDependencies:
-    react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/d6f6bbd5b17218d2b5e020d1f4ed77047312a82003c9f0eabad387835affb0d99699a91117ab82d33cefbf4802c830d1ec8c724d2713cdb1778643e4443b7af5
+    react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/0d4a361adb6bd9ac63ff8df1af6cd2054816471abb3fb4f53f9fdf2c2e137a5e943d88f6a00a7baecd41336782e842e6589b2d96b8cc23316959e9d328f1e833
   languageName: node
   linkType: hard
 
