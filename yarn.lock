@@ -8703,7 +8703,7 @@ __metadata:
     react-simple-typewriter: "npm:^5.0.1"
     serve: "npm:^14.2.0"
     typescript: "npm:5.4.5"
-    typewriter-effect: "npm:^2.19.0"
+    typewriter-effect: "npm:^2.22.0"
   languageName: unknown
   linkType: soft
 
@@ -11321,16 +11321,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typewriter-effect@npm:^2.19.0":
-  version: 2.21.0
-  resolution: "typewriter-effect@npm:2.21.0"
+"typewriter-effect@npm:^2.22.0":
+  version: 2.22.0
+  resolution: "typewriter-effect@npm:2.22.0"
   dependencies:
     prop-types: "npm:^15.8.1"
     raf: "npm:^3.4.1"
   peerDependencies:
-    react: ^17.x || ^18.x
-    react-dom: ^17.x || ^18.x
-  checksum: 10/eaefe01da5ecfc866a1031efa34ad365f4f52fc57be9acf67d4877e01361844a2798f1aba035845fc9f60edaa56bdbb6f7597341ae8e4015793795e1d7b6763d
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: 10/67791252894a5bd56ae300e4b7a7f1445aa7e18672deb04e08e2e89d405d8f3b629fc026c120459b9b4f06c5c220cfa1f63f62bae9eeb5931150742267f49153
   languageName: node
   linkType: hard
 
