@@ -384,7 +384,7 @@ const Recruit = () => {
                                     <strong style={{ display: 'block', marginBottom: '20px', fontSize: '18px' }}>学生の方</strong>
                                     <Box className="table">
                                         <a
-                                            href="https://forms.gle/AZvPqpVLH9YL9x1r7"
+                                            href="https://forms.gle/zmedoSZnfhFJsX4m8"
                                             target="_blank"
                                             rel="noreferrer noopener"
                                             className="contactform"
@@ -398,7 +398,7 @@ const Recruit = () => {
                                     <strong style={{ display: 'block', marginBottom: '20px', fontSize: '18px' }}>社会人・業務委託の方</strong>
                                     <Box className="table">
                                         <a
-                                            href="https://forms.gle/SMZV7WaMnstK5Cvh9"
+                                            href="https://forms.gle/NJKis2cppREZcLvv7"
                                             target="_blank"
                                             rel="noreferrer noopener"
                                             className="contactform"
